@@ -156,9 +156,9 @@ docker-compose exec mariadb sh -c 'exec mysqldump -uroot -p"root-password" my-db
 
 ### Redis
 
-To spin up a container with Redis cache and use it as a default cache storage follow these steps:
+To spin up a container with Redis cache and use it as an object cache storage follow these steps:
 
-1. 
+1. Download and install plugin <a href="https://wordpress.org/plugins/redis-cache/" target="_blank">Redis Object Cache</a>
 2. Add the following line to wp-config.php file:
 ```php
 define('WP_REDIS_HOST', 'redis');
@@ -166,8 +166,17 @@ define('WP_REDIS_HOST', 'redis');
 
 ### Memcached
 
-To spin up a container with Memcached and use it as a default cache storage follow these steps:
+To spin up a container with Memcached and use it as an object cache storage follow these steps:
 
+1. Download and install plugin <a href="https://wordpress.org/plugins/memcached" target="_blank">Memcached Object Cache</a>
+2. Add the following line to wp-config.php file:
+```php
+$memcached_servers = array(
+    'default' => array(
+        'memcached:11211',
+    ),
+);
+```
 
 ### Mailhog
 
