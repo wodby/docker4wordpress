@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Docker4WordPress by Wodby</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Docker4WordPress</h1>
+      <h2 class="project-tagline">Native docker-based local environment for WordPress</h2>
+      <a href="https://github.com/Wodby/docker4wordpress" class="btn">View on GitHub</a>
+      <a href="https://github.com/Wodby/docker4wordpress/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/Wodby/docker4wordpress/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="native-docker-based-local-environment-for-wordpress" class="anchor" href="#native-docker-based-local-environment-for-wordpress" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Native docker-based local environment for WordPress</h1>
+
+<p>Use this Docker compose file to spin up local environment for WordPress with a <em>native Docker app</em> on Linux, Mac OS X and Windows. </p>
+
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#instructions">Instructions</a></li>
+<li>
+<a href="#containers">Containers</a>
+
+<ul>
+<li><a href="#accessing-containers">Accessing containers</a></li>
+<li><a href="#nginx">Nginx</a></li>
+<li>
+<a href="#php">PHP</a>
+
+<ul>
+<li><a href="#composer">Composer</a></li>
+<li>
+<a href="#xdebug">Xdebug</a><br>
+</li>
+</ul>
+</li>
+<li>
+<a href="#mariadb">MariaDB</a>
+
+<ul>
+<li><a href="#import">Import</a></li>
+<li><a href="#export">Export</a></li>
+</ul>
+</li>
+<li><a href="#redis">Redis</a></li>
+<li><a href="#memcached">Memcached</a></li>
+<li><a href="#mailhog">Mailhog</a></li>
+<li><a href="#phpmyadmin">phpMyAdmin</a></li>
+<li><a href="#apache-solr">Apache Solr</a></li>
+<li><a href="#varnish">Varnish</a></li>
+</ul>
+</li>
+<li><a href="#multiple-projects">Multiple projects</a></li>
+<li><a href="#docroot-in-subdirectory">Docroot in subdirectory</a></li>
+<li><a href="#logs">Logs</a></li>
+<li><a href="#status">Status</a></li>
+<li><a href="#going-beyond-local-machine">Going beyond local machine</a></li>
+</ul>
+
+<h2>
+<a id="overview" class="anchor" href="#overview" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Overview</h2>
+
+<p>The WordPress bundle consist of the following containers:</p>
+
+<table>
+<thead>
+<tr>
+<th>Container</th>
+<th>Service name</th>
+<th>Image</th>
+<th>Public Port</th>
+<th>Enabled by default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#nginx">Nginx</a></td>
+<td>nginx</td>
+<td><a href="https://hub.docker.com/r/wodby/wordpress-nginx/">wodby/wordpress-nginx</a></td>
+<td>8000</td>
+<td>✓</td>
+</tr>
+<tr>
+<td><a href="#php">PHP 7</a></td>
+<td>php</td>
+<td><a href="https://hub.docker.com/r/wodby/wordpress-php/">wodby/wordpress-php</a></td>
+<td></td>
+<td>✓</td>
+</tr>
+<tr>
+<td><a href="#mariadb">MariaDB</a></td>
+<td>mariadb</td>
+<td><a href="https://hub.docker.com/r/wodby/wordpress-mariadb/">wodby/wordpress-mariadb</a></td>
+<td></td>
+<td>✓</td>
+</tr>
+<tr>
+<td><a href="#phpmyadmin">phpMyAdmin</a></td>
+<td>pma</td>
+<td><a href="https://hub.docker.com/r/phpmyadmin/phpmyadmin">phpmyadmin/phpmyadmin</a></td>
+<td>8001</td>
+<td>✓</td>
+</tr>
+<tr>
+<td><a href="#mailhog">Mailhog</a></td>
+<td>mailhog</td>
+<td><a href="https://hub.docker.com/r/mailhog/mailhog">mailhog/mailhog</a></td>
+<td>8002</td>
+<td>✓</td>
+</tr>
+<tr>
+<td><a href="#redis">Redis</a></td>
+<td>redis</td>
+<td><a href="https://hub.docker.com/_/redis/">redis/redis</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#memcached">Memcached</a></td>
+<td>memcached</td>
+<td><a href="https://hub.docker.com/_/memcached/">_/memcached</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#solr">Solr</a></td>
+<td>solr</td>
+<td><a href="https://hub.docker.com/_/solr">_/solr</a></td>
+<td>8003</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#varnish">Varnish</a></td>
+<td>varnish</td>
+<td><a href="https://hub.docker.com/r/wodby/wordpress-varnish">wodby/wordpress-varnish</a></td>
+<td>8004</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<p>PHP, Nginx, MariaDB and Varnish configs are optimized to be used with WordPress. We regularly update this bundle with performance improvements, bug fixes and newer version of Nginx/PHP/MariaDB.</p>
+
+<h2>
+<a id="instructions" class="anchor" href="#instructions" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Instructions</h2>
+
+<p><strong>Feel free to adjust volumes and ports in the compose file for your convenience.</strong></p>
+
+<p>1. Install docker for <a href="https://docs.docker.com/engine/installation/">Linux</a>, <a href="https://docs.docker.com/engine/installation/mac">Mac OS X</a> or <a href="https://docs.docker.com/engine/installation/windows">Windows</a>. <strong>For Mac and Windows make sure you're installing native docker app version 1.12, not docker toolbox.</strong> </p>
+
+<p>For Linux additionally install <a href="https://docs.docker.com/compose/install/">docker compose</a></p>
+
+<p>2. Download <a href="https://raw.githubusercontent.com/Wodby/docker4wordpress/master/docker-compose.yml">the compose file</a> from this repository and put it to your WordPress project codebase (you might want to add docker-compose.yml to .gitignore). </p>
+
+<p>3. Since containers <a href="https://docs.docker.com/engine/tutorials/dockervolumes/">do not have a permanent storage</a>, directories from the host machine (volumes) should be mounted: one with code of your WordPress project and another with database files. </p>
+
+<p>By default, the directory with the compose file (volume <code>./</code>) will be mounted to PHP container (assuming it's your codebase directory). Additionally <code>docker-runtime</code> directory will be created to store files for mariadb and, optionally, solr containers. Do not forget to add <code>docker-runtime</code> to your .gitignore file. </p>
+
+<p><strong>Linux only</strong>: fix permissions for your files directory with:</p>
+
+<div class="highlight highlight-source-shell"><pre>$ sudo chgrp -R 82 sites/default/files
+$ sudo chmod -R 775 sites/default/files</pre></div>
+
+<p>4. Update database credentials in your wp-config.php file:</p>
+
+<pre><code>DB_NAME: wordpress
+DB_USER: wordpress
+DB_PASSWORD: wordpress
+DB_HOST: mariadb
+</code></pre>
+
+<p>5. If you want to import your database, uncomment the following line in the compose file:</p>
+
+<div class="highlight highlight-source-yaml"><pre><span class="pl-c">#      - ./docker-runtime/mariadb-init:/docker-entrypoint-initdb.d # Place init .sql file(s) her</span></pre></div>
+
+<p>Create the volume directory <code>./docker-runtime/mariadb-init</code> in the same directory as the compose file and put there your SQL file(s). All SQL files will be automatically imported once MariaDB container has started.</p>
+
+<p>6. If you need to deploy one of the optional containers (<a href="#redis">Redis</a>, <a href="#memcached">Memcached</a>, <a href="#apache-solr">Apache Solr</a>) uncomment the corresponding lines in the compose file.</p>
+
+<p>7. Now, let's run the compose file. It will download the images and run the containers:</p>
+
+<div class="highlight highlight-source-shell"><pre>$ docker-compose up -d</pre></div>
+
+<p>8. Make sure all containers are running by executing:</p>
+
+<div class="highlight highlight-source-shell"><pre>$ docker-compose ps</pre></div>
+
+<p>9. That's it! You wordpress website should be up and running at http://localhost:8000. </p>
+
+<h2>
+<a id="containers" class="anchor" href="#containers" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Containers</h2>
+
+<h3>
+<a id="accessing-containers" class="anchor" href="#accessing-containers" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Accessing containers</h3>
+
+<p>You can connect to any container by executing the following command:</p>
+
+<div class="highlight highlight-source-shell"><pre>$ docker-compose <span class="pl-c1">exec</span> php sh</pre></div>
+
+<p>Replace <code>php</code> with the name of your service (e.g. <code>mariadb</code>, <code>nginx</code>, etc).</p>
+
+<h3>
+<a id="nginx" class="anchor" href="#nginx" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Nginx</h3>
+
+<p>Nginx is being used as a web server. Nginx is pre-configured to be used with WordPress. </p>
+
+<h3>
+<a id="php" class="anchor" href="#php" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>PHP</h3>
+
+<p>PHP is used with Nginx via PHP-FPM.</p>
+
+<h4>
+<a id="composer" class="anchor" href="#composer" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Composer</h4>
+
+<p>PHP container has installed composer. Example:</p>
+
+<div class="highlight highlight-source-shell"><pre>$ docker-compose <span class="pl-c1">exec</span> --user 82 php composer update</pre></div>
+
+<h4>
+<a id="xdebug" class="anchor" href="#xdebug" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Xdebug</h4>
+
+<p>If you want to use xdebug, enable the following option in the compose file:</p>
+
+<div class="highlight highlight-source-yaml"><pre><span class="pl-c1"><span class="pl-ent">PHP_XDEBUG_ENABLED:</span> 0 </span><span class="pl-c"># Set 1 to enable.</span></pre></div>
+
+<h3>
+<a id="mariadb" class="anchor" href="#mariadb" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>MariaDB</h3>
+
+<h4>
+<a id="configuring" class="anchor" href="#configuring" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Configuring</h4>
+
+<p>Many configuration options can be passed as flags without adjusting a cnf file. See example in the compose file:</p>
+
+<div class="highlight highlight-source-shell"><pre><span class="pl-c">#    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci</span></pre></div>
+
+<h4>
+<a id="import" class="anchor" href="#import" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Import</h4>
+
+<p>Check out <a href="#instructions">the instructions (step 7)</a> to learn how to import your existing database. </p>
+
+<h4>
+<a id="export" class="anchor" href="#export" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Export</h4>
+
+<p>Exporting all databases:</p>
+
+<div class="highlight highlight-source-shell"><pre>docker-compose <span class="pl-c1">exec</span> mariadb sh -c <span class="pl-s"><span class="pl-pds">'</span>exec mysqldump --all-databases -uroot -p"root-password"<span class="pl-pds">'</span></span> <span class="pl-k">&gt;</span> databases.sql</pre></div>
+
+<p>Exporting a specific database:</p>
+
+<div class="highlight highlight-source-shell"><pre>docker-compose <span class="pl-c1">exec</span> mariadb sh -c <span class="pl-s"><span class="pl-pds">'</span>exec mysqldump -uroot -p"root-password" my-db<span class="pl-pds">'</span></span> <span class="pl-k">&gt;</span> my-db.sql</pre></div>
+
+<h3>
+<a id="redis" class="anchor" href="#redis" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Redis</h3>
+
+<p>To spin up a container with Redis cache and use it as a default cache storage follow these steps:</p>
+
+<ol>
+<li>
+<li>Add the following line to wp-config.php file:</li>
+</ol>
+
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">define</span>(<span class="pl-s"><span class="pl-pds">'</span>WP_REDIS_HOST<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>redis<span class="pl-pds">'</span></span>);</span></pre></div>
+
+<h3>
+<a id="memcached" class="anchor" href="#memcached" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Memcached</h3>
+
+<p>To spin up a container with Memcached and use it as a default cache storage follow these steps:</p>
+
+<h3>
+<a id="mailhog" class="anchor" href="#mailhog" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Mailhog</h3>
+
+<p>By default, container with mailhog included in the bundle. It will catch all email sent from the PHP container. You can view emails by visiting its admin UI on localhost:8002.</p>
+
+<h3>
+<a id="phpmyadmin" class="anchor" href="#phpmyadmin" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>phpMyAdmin</h3>
+
+<p>By default, container with phpMyAdmin included in the bundle. You can access it by localhost:8001</p>
+
+<h3>
+<a id="apache-solr" class="anchor" href="#apache-solr" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Apache Solr</h3>
+
+<p>To spin up a container with Apache Solr search engine uncomment lines with solr service definition in the compose file. Use  volume directory <code>./docker-runtime/solr</code> to access configuration files. Solr admin UI can be accessed by localhost:8003</p>
+
+<h3>
+<a id="varnish" class="anchor" href="#varnish" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Varnish</h3>
+
+<p>To spin up a container with Varnish uncomment lines with varnish service definition in the compose file. Use the port specified in the compose file to access the website via Varnish.</p>
+
+<h2>
+<a id="multiple-projects" class="anchor" href="#multiple-projects" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Multiple projects</h2>
+
+<p>To use D4D with multiple projects simply adjust the ports in the compose file, e.g. instead of ports 8000, 8001, 8002 you can use 7000, 7001, 7002.</p>
+
+<h2>
+<a id="docroot-in-subdirectory" class="anchor" href="#docroot-in-subdirectory" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Docroot in subdirectory</h2>
+
+<p>If your docroot located in a subdirectory use options <code>PHP_DOCROOT</code> and <code>NGINX_DOCROOT</code> to specify the path (relative path inside the /var/www/html/ directory) for PHP and Nginx containers.</p>
+
+<h2>
+<a id="logs" class="anchor" href="#logs" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Logs</h2>
+
+<p>To get logs from a container simply run (skip the last param to get logs form all the containers):</p>
+
+<pre><code>$ docker-compose logs [service]
+</code></pre>
+
+<p>Example: real-time logs of the PHP container:</p>
+
+<pre><code>$ docker-compose logs -f php
+</code></pre>
+
+<h2>
+<a id="status" class="anchor" href="#status" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Status</h2>
+
+<p>We're actively working on this instructions and containers. More options will be added soon. If you have a feature request or found a bug please submit an issue.</p>
+
+<p>We update containers from time to time, to get the lastest changes simply run again:</p>
+
+<pre><code>$ docker-compose up -d
+</code></pre>
+
+<h2>
+<a id="going-beyond-local-machine" class="anchor" href="#going-beyond-local-machine" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Going beyond local machine</h2>
+
+<p>Check out <a href="https://wodby.com">Wodby</a> if you need optimized consistent docker-based environment for WordPress on your dev/staging or production servers. </p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/Wodby/docker4wordpress">Docker4WordPress</a> is maintained by <a href="https://github.com/Wodby">Wodby</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
