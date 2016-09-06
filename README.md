@@ -2,6 +2,8 @@
 
 Use this Docker compose file to spin up local environment for WordPress with a *native Docker app* on Linux, Mac OS X and Windows. 
 
+Docker4WordPress is designed to be used for local development, if you're looking for a dev/staging/production solution check out Wodby. Use Wodby to deploy container-based infrastructure consistent with Docker4WordPress to any server.
+
 * [Overview](#overview)
 * [Instructions](#instructions)
 * [Containers](#containers)
@@ -23,7 +25,6 @@ Use this Docker compose file to spin up local environment for WordPress with a *
 * [Docroot in subdirectory](#docroot-in-subdirectory)
 * [Logs](#logs)
 * [Status](#status)
-* [Going beyond local machine](#going-beyond-local-machine)
 
 ## Overview
 
@@ -223,6 +224,3 @@ We update containers from time to time, to get the lastest changes simply run ag
 $ docker-compose up -d
 ```
 
-## Going beyond local machine
-
-Check out <a href="https://wodby.com" target="_blank">Wodby</a> if you need optimized consistent docker-based environment for WordPress on your dev/staging or production servers. 
