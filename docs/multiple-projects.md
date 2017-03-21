@@ -1,0 +1,1 @@
+If you want to run multiple projects with docker4wordpress, just use separate compose files per project with different traefik ports. Alternatively, Linux users can move out traefik container and run it separately (this won't work for macOS).

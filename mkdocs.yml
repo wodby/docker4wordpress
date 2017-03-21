@@ -1,0 +1,25 @@
+site_name: Docker4WordPress Documentation
+
+repo_url: https://github.com/wodby/docker4wordress
+site_description: 'Docker4WordPress – Docker-based WordPress environment for local development'
+theme: readthedocs
+
+markdown_extensions:
+  - toc:
+      permalink: True
+
+pages:
+  - Getting Started: 'index.md'
+  - Domains: 'domains.md'
+  - Logs: 'logs.md'
+  - Accessing Containers: 'access.md'
+  - Permissions: 'permissions.md'
+  - Docker for Mac: 'macos.md'
+  - Multiple Projects: 'multiple-projects.md'
+  - Using In Production: 'production.md'
+  - Containers:
+    - 'Nginx': 'containers/nginx.md'
+    - 'PHP': 'containers/php.md'
+    - 'MariaDB': 'containers/mariadb.md'
+    - 'Redis': 'containers/redis.md'
+    - 'Varnish': 'containers/varnish.md'

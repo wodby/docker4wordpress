@@ -2,38 +2,57 @@ version: "2"
 
 services:
   mariadb:
-    image: wodby/wordpress-mariadb
+    image: wodby/mariadb:10.1-2.0.0
     environment:
-      MYSQL_RANDOM_ROOT_PASSWORD: 1
+      MYSQL_ROOT_PASSWORD: password
       MYSQL_DATABASE: wordpress
       MYSQL_USER: wordpress
       MYSQL_PASSWORD: wordpress
 #    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci # The simple way to override the mariadb config.
-    volumes:
-      - ./docker-runtime/mariadb:/var/lib/mysql
-#      - ./docker-runtime/mariadb-init:/docker-entrypoint-initdb.d # Place init .sql file(s) here.
+#    volumes:
+#      - ./mariadb-init:/docker-entrypoint-initdb.d # Place init .sql file(s) here.
+#      - /path/to/mariadb/data/on/host:/var/lib/mysql # I want to manage volumes manually.
 
   php:
-    image: wodby/wordpress-php
+    image: wodby/wordpress-php:7.0-2.0.0
+#    image: wodby/wordpress-php:7.1-2.0.0
     environment:
-      PHP_SITE_NAME: dev
-      PHP_HOST_NAME: localhost:8000
-#      PHP_DOCROOT: public # Relative path inside the /var/www/html/ directory.
       PHP_SENDMAIL_PATH: /usr/sbin/sendmail -t -i -S mailhog:1025
-      PHP_XDEBUG_ENABLED: 0 # Set 1 to enable.
+      # PHP_XDEBUG: 1
+      # PHP_XDEBUG_DEFAULT_ENABLE: 1
+      # PHP_XDEBUG_REMOTE_CONNECT_BACK: 0         # This is needed to respect remote.host setting bellow
+      # PHP_XDEBUG_REMOTE_HOST: "10.254.254.254"  # You will also need to 'sudo ifconfig lo0 alias 10.254.254.254'
     volumes:
       - ./:/var/www/html
+#      - d4d-unison-sync:/var/www/html:rw # Replace volume to this to use docker-sync for macOS users
 
   nginx:
-    image: wodby/wordpress-nginx
+    image: wodby/wordpress-nginx:4-1.10-2.0.0
     environment:
-      NGINX_SERVER_NAME: localhost
-      NGINX_UPSTREAM_NAME: php
-#      NGINX_DOCROOT: public # Relative path inside the /var/www/html/ directory.
-    volumes_from:
-      - php
-    ports:
-      - "8000:80"
+      NGINX_BACKEND_HOST: php
+      NGINX_SERVER_ROOT: /var/www/html/
+    volumes:
+      - ./:/var/www/html
+    labels:
+      - 'traefik.backend=nginx'
+      - 'traefik.port=80'
+      - 'traefik.frontend.rule=Host:wp.docker.localhost'
+
+#  varnish:
+#    image: wodby/wordpress-varnish:4.1-2.0.0
+#    depends_on:
+#      - nginx
+#    environment:
+#      VARNISH_SECRET: secret
+#      VARNISH_BACKEND_HOST: nginx
+#      VARNISH_BACKEND_PORT: 80
+#    labels:
+#      - 'traefik.backend=varnish'
+#      - 'traefik.port=6081'
+#      - 'traefik.frontend.rule=Host:varnish.wp.docker.localhost'
+
+  redis:
+    image: wodby/redis:3.2-2.0.1
 
   pma:
     image: phpmyadmin/phpmyadmin
@@ -43,23 +62,29 @@ services:
       PMA_PASSWORD: wordpress
       PHP_UPLOAD_MAX_FILESIZE: 1G
       PHP_MAX_INPUT_VARS: 1G
-    ports:
-     - "8001:80"
+    labels:
+      - 'traefik.backend=pma'
+      - 'traefik.port=80'
+      - 'traefik.frontend.rule=Host:pma.wp.docker.localhost'
 
   mailhog:
     image: mailhog/mailhog
+    labels:
+      - 'traefik.backend=mailhog'
+      - 'traefik.port=8025'
+      - 'traefik.frontend.rule=Host:mailhog.wp.docker.localhost'
+
+  traefik:
+    image: traefik
+    restart: unless-stopped
+    command: -c /dev/null --web --docker --logLevel=INFO
     ports:
-      - "8002:8025"
+      - '8000:80'
+      - '8080:8080'
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
 
-#  redis:
-#    image: redis:3.2-alpine
-
-#  memcached:
-#    image: memcached:1.4-alpine
-
-#  solr:
-#    image: solr:5.5-alpine
-#    volumes:
-#      - ./docker-runtime/solr:/opt/solr/server/solr/mycores
-#    ports:
-#      - "8003:8983"
+# Docker-sync for macOS users
+#volumes:
+#  d4d-unison-sync:
+#    external: true
