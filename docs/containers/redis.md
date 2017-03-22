@@ -1,3 +1,7 @@
+# Redis container
+
+## Integration
+
 To spin up a container with Redis cache and use it as a default cache storage follow these steps:
 
 1. Uncomment lines with redis service definition in the compose file.
@@ -8,5 +12,7 @@ To spin up a container with Redis cache and use it as a default cache storage fo
 define('WP_REDIS_HOST', 'redis');
 define('WP_REDIS_PORT', '6379');
 ```
+
+## Customization
 
 You can find more information about redis configuration on [wodby/redis](https://github.com/wodby/redis).
