@@ -1,6 +1,6 @@
 site_name: Docker4WordPress Documentation
 
-repo_url: https://github.com/wodby/docker4wordress
+repo_url: https://github.com/wodby/docker4wordpress
 site_description: 'Docker4WordPress – Docker-based WordPress environment for local development'
 theme: readthedocs
 
