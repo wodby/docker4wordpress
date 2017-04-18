@@ -65,19 +65,6 @@ There 2 options how to use docker4wordpress – you can either run [vanilla](htt
 9. Run containers: `docker-compose up -d`
 10. That's it! Your WordPress website should be up and running at [http://wp.docker.localhost:8000](http://wp.docker.localhost:8000). If you need to run multiple projects simultaneously see [this article](multiple-projects.md)
 
-## Usage 
-
-Feel free to adjust volumes and ports in the compose file for your convenience.
-
-1. Download [docker-compose.yml file](https://github.com/wodby/docker4wordpress/blob/master/docker-compose.yml) from [docker4wordpress repository](https://github.com/wodby/docker4wordpress) and put it to your WordPress project codebase directory. This directory will be mounted to PHP and Nginx containers 
-2. Choose your PHP version (7.0 by default)
-3. Make sure you have the same database credentials in your wp-config.php file and MariaDB service definition in the compose file 
-4. Optional: [import existing database](containers/mariadb.md#import-existing-database)
-6. Optionally enable Varnish container by uncommenting the corresponding lines in the compose file
-7. Optional: [configure domains](domains.md)
-8. Run containers: `docker-compose up -d`
-9. That's it! You WordPress website should be up and running at [http://wp.docker.localhost:8000](http://wp.docker.localhost:8000)
-
 You can stop containers by executing:
 ```bash
 docker-compose stop
