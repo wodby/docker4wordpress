@@ -1,5 +1,12 @@
 # Docker4WordPress Changelog
 
+## 2.1.0
+
+* New 2.1.0 images for php, nginx, mariadb, redis and varnish
+* Updated documentation
+* New [Vanilla WordPress option](http://docs.docker4wordpress.org/en/latest/#1-run-vanilla-wordpress-from-image-default) is now default 
+* traefik.yml to [run multiple projects simultaneously](http://docs.docker4wordpress.org/en/latest/multiple-projects/)
+
 ## 2.0.0
 
 * IMPORTANT: MariaDB container now has no volume defined via compose file. The volume is already defined in its Dockerfile, so Docker will create and mount volume automatically. Do not use docker-compose down unless you want to purge your volumes. If you restart docker or use docker-compose stop the volume will persist

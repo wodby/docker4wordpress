@@ -22,9 +22,9 @@ The WordPress bundle consist of the following containers:
 | [Nginx](containers/nginx.md)         | 1.10     | nginx     | [wodby/wordpress-nginx]   | ✓ |
 | [PHP](containers/php.md)             | 7.0, 7.1 | php       | [wodby/wordpress-php]     | ✓ |
 | [MariaDB](containers/mariadb.md)     | 10.1     | mariadb   | [wodby/mariadb]           | ✓ |
-| [Redis](containers/redis.md)         | 3.2      | redis     | [wodby/redis]             | ✓ |
+| [Redis](containers/redis.md)         | 3.2      | redis     | [wodby/redis]             |   |
 | [Varnish](containers/varnish.md)     | 4.1      | varnish   | [wodby/wordpress-varnish] |   |
-| phpMyAdmin                           | latest   | pma       | [phpmyadmin/phpmyadmin]   | ✓ |
+| phpMyAdmin                           | latest   | pma       | [phpmyadmin/phpmyadmin]   |   |
 | Mailhog                              | latest   | mailhog   | [mailhog/mailhog]         | ✓ |
 | Traefik                              | latest   | traefik   | [_/traefik]               |   |
 
@@ -40,6 +40,30 @@ Supported WordPress versions: 4
 1. To make sure you don't lose your MariaDB data DO NOT use `docker-compose down` (Docker will destroy volumes), instead use `docker-compose stop`. Alternatively, you can specify manual volume for `/var/lib/mysql` (see compose file), this way your data will always persist 
 2. To avoid potential problems with permissions between your host and containers please follow [this instructions](permissions.md)
 3. _For macOS users_: Out of box Docker for Mac has [poor performance](https://github.com/Wodby/docker4wordpress/issues/4) on macOS. However there's a workaround based on [docker-sync project](https://github.com/EugenMayer/docker-sync/), read instructions [here](macos.md)
+
+## Usage 
+
+There 2 options how to use docker4wordpress – you can either run [vanilla](https://en.wikipedia.org/wiki/Vanilla_software) WordPress from the image or mount your own WordPress codebase:
+
+### 1. Run Vanilla WordPress from Image (default)
+
+1. Download [docker-compose.yml file](https://github.com/wodby/docker4wordpress/blob/master/docker-compose.yml)
+2. Run containers: `docker-compose up -d` 
+3. Wait a few seconds for containers initialization 
+4. That's it! Proceed with WordPress installation at [http://wp.docker.localhost:8000](http://wp.docker.localhost:8000). Default database user, password and database name are all `wordpress`, database host is `mariadb`
+
+### 2. Mount my WordPress Codebase
+
+0. Read [must know before you start](#must-know-before-you-start)
+1. Download [docker-compose.yml file](https://github.com/wodby/docker4wordpress/blob/master/docker-compose.yml) to your WordPress project root
+2. Replace php image from `wodby/wordpress` (PHP + vanilla WordPress) to `wodby/wordpress-php` (just PHP)
+3. Update _nginx_ and _php_ volumes to `- ./:/var/www/html` to mount your codebase
+4. Ensure your wp-config.php has the same credentials as _mariadb_ service 
+5. Optional: [import existing database](containers/mariadb.md#import-existing-database)
+7. Optional: uncomment lines in the compose file to run _redis_, _varnish_, _phpmyadmin (pma)_ 
+8. Optional: [customize domains](domains.md)
+9. Run containers: `docker-compose up -d`
+10. That's it! Your WordPress website should be up and running at [http://wp.docker.localhost:8000](http://wp.docker.localhost:8000). If you need to run multiple projects simultaneously see [this article](multiple-projects.md)
 
 ## Usage 
 

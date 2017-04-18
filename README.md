@@ -31,9 +31,9 @@ The WordPress bundle consist of the following containers:
 | Nginx      | 1.10     | nginx     | [wodby/wordpress-nginx]   | ✓ |
 | PHP        | 7.0, 7.1 | php       | [wodby/wordpress-php]     | ✓ |
 | MariaDB    | 10.1     | mariadb   | [wodby/mariadb]           | ✓ |
-| Redis      | 3.2      | redis     | [wodby/redis]             | ✓ |
+| Redis      | 3.2      | redis     | [wodby/redis]             |   |
 | Varnish    | 4.1      | varnish   | [wodby/wordpress-varnish] |   |
-| phpMyAdmin | latest   | pma       | [phpmyadmin/phpmyadmin]   | ✓ |
+| phpMyAdmin | latest   | pma       | [phpmyadmin/phpmyadmin]   |   |
 | Mailhog    | latest   | mailhog   | [mailhog/mailhog]         | ✓ |
 | Traefik    | latest   | traefik   | [_/traefik]               |   |
 
