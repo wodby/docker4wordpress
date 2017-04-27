@@ -6,9 +6,10 @@ Docker4WordPress is designed to be used for local development, if you're looking
 
 ## Overview
 
-The WordPress bundle consist of the following containers:
+The WordPress stack consist of the following containers:
 
 [wodby/wordpress-nginx]: https://github.com/wodby/wordpress-nginx
+[wodby/wordpress]: https://github.com/wodby/wordpress
 [wodby/wordpress-php]: https://github.com/wodby/wordpress-php
 [wodby/mariadb]: https://github.com/wodby/mariadb
 [wodby/redis]: https://github.com/wodby/redis
@@ -20,7 +21,8 @@ The WordPress bundle consist of the following containers:
 | Container | Versions | Service name | Image | Enabled by default |
 | --------- | -------- | ------------ | ----- | ------------------ |
 | [Nginx](containers/nginx.md)         | 1.10     | nginx     | [wodby/wordpress-nginx]   | ✓ |
-| [PHP](containers/php.md)             | 7.0, 7.1 | php       | [wodby/wordpress-php]     | ✓ |
+| WordPress                            | 4        | php       | [wodby/wordpress]         | ✓ |
+| [PHP](containers/php.md)             | 7.0, 7.1 | php       | [wodby/wordpress-php]     |   |
 | [MariaDB](containers/mariadb.md)     | 10.1     | mariadb   | [wodby/mariadb]           | ✓ |
 | [Redis](containers/redis.md)         | 3.2      | redis     | [wodby/redis]             |   |
 | [Varnish](containers/varnish.md)     | 4.1      | varnish   | [wodby/wordpress-varnish] |   |

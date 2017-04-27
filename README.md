@@ -13,9 +13,10 @@ Docker4WordPress is a set of docker images optimized for local development with 
 
 Read [**Getting Started**](http://docs.docker4wordpress.org/en/latest/).
 
-## Bundle
+## Stack
 
 [wodby/wordpress-nginx]: https://github.com/wodby/wordpress-nginx
+[wodby/wordpress]: https://github.com/wodby/wordpress
 [wodby/wordpress-php]: https://github.com/wodby/wordpress-php
 [wodby/mariadb]: https://github.com/wodby/mariadb
 [wodby/redis]: https://github.com/wodby/redis
@@ -24,12 +25,13 @@ Read [**Getting Started**](http://docs.docker4wordpress.org/en/latest/).
 [mailhog/mailhog]: https://hub.docker.com/r/mailhog/mailhog
 [_/traefik]: https://hub.docker.com/_/traefik
 
-The WordPress bundle consist of the following containers:
+The WordPress stack consist of the following containers:
 
 | Container | Versions | Service name | Image | Enabled by default |
 | --------- | -------- | ------------ | ----- | ------------------ |
 | Nginx      | 1.10     | nginx     | [wodby/wordpress-nginx]   | ✓ |
-| PHP        | 7.0, 7.1 | php       | [wodby/wordpress-php]     | ✓ |
+| WordPress  | 4        | php       | [wodby/wordpress]         | ✓ |
+| PHP        | 7.0, 7.1 | php       | [wodby/wordpress-php]     |   |
 | MariaDB    | 10.1     | mariadb   | [wodby/mariadb]           | ✓ |
 | Redis      | 3.2      | redis     | [wodby/redis]             |   |
 | Varnish    | 4.1      | varnish   | [wodby/wordpress-varnish] |   |
