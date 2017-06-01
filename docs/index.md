@@ -28,7 +28,7 @@ The WordPress stack consist of the following containers:
 | [Varnish](containers/varnish.md)     | 4.1      | varnish   | [wodby/wordpress-varnish] |   |
 | phpMyAdmin                           | latest   | pma       | [phpmyadmin/phpmyadmin]   |   |
 | Mailhog                              | latest   | mailhog   | [mailhog/mailhog]         | ✓ |
-| Traefik                              | latest   | traefik   | [_/traefik]               |   |
+| Traefik                              | latest   | traefik   | [_/traefik]               | ✓ |
 
 Supported WordPress versions: 4
 
