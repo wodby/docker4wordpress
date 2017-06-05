@@ -1,4 +1,4 @@
-# Docker-based WordPress environment for local development
+# Docker-based WordPress stack
 
 [![Documentation Status](https://readthedocs.org/projects/docker4wordpress/badge/?version=latest)](http://docs.docker4wordpress.org)
 [![Build Status](https://travis-ci.org/wodby/docker4wordpress.svg?branch=master)](https://travis-ci.org/wodby/docker4wordpress)
@@ -7,7 +7,7 @@
 
 ## Introduction
 
-Docker4WordPress is a set of docker images optimized for local development with WordPress. Use docker-compose.yml file from this repository to spin up local environment on Linux, Mac OS X and Windows. 
+Docker4WordPress is a set of docker images optimized for WordPress. Use docker-compose.yml file from this repository to WordPress stack on Linux, macOS and Windows. 
 
 Read [**Getting Started**](http://docs.docker4wordpress.org/en/latest/).
 
