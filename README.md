@@ -43,7 +43,7 @@ Supported WordPress versions: 4
 
 Full documentation is available at http://docs.docker4wordpress.org/.
 
-## Using in Production
+## Deployment
 
 Deploy docker-based WordPress stack to your own server via [![Wodby](https://www.google.com/s2/favicons?domain=wodby.com) Wodby](https://cloud.wodby.com/stackhub/dcca9437-eef2-4b3b-8ab2-b7c9c480a19e/detail).
 
