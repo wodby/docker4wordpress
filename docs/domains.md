@@ -4,11 +4,14 @@ Docker4WordPress uses [traefik](https://hub.docker.com/_/traefik/) container for
 
 Default domains:
 
-| Service | Domain | 
-| ------- | ------ | 
-| nginx   | [http://wp.docker.localhost:8000](http://wp.docker.localhost:8000)                 | 
-| pma     | [http://pma.wp.docker.localhost:8000](http://pma.wp.docker.localhost:8000)         | 
-| mailhog | [http://mailhog.wp.docker.localhost:8000](http://mailhog.wp.docker.localhost:8000) | 
-| varnish | [http://varnish.wp.docker.localhost:8000](http://varnish.wp.docker.localhost:8000) |
+| Service | Domain |
+| ------- | ------ |
+| nginx/apache | [http://wp.docker.localhost:8000](http://wp.docker.localhost:8000)                     |
+| pma          | [http://pma.wp.docker.localhost:8000](http://pma.wp.docker.localhost:8000)             |
+| mailhog      | [http://mailhog.wp.docker.localhost:8000](http://mailhog.wp.docker.localhost:8000)     |
+| varnish      | [http://varnish.wp.docker.localhost:8000](http://varnish.wp.docker.localhost:8000)     |
+| portainer    | [http://portainer.wp.docker.localhost:8000](http://portainer.wp.docker.localhost:8000) |
  
 You can customize domains under labels definition, e.g. `traefik.frontend.rule=Host:mailhog.wp.docker.localhost`. Note: if domains end with `docker.localhost` you don't need to add records to /etc/hosts file
+
+> IMPORTANT: you might need to add *.docker.localhost domains manually to your /etc/hosts file

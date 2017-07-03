@@ -13,6 +13,6 @@ define('WP_REDIS_HOST', 'redis');
 define('WP_REDIS_PORT', '6379');
 ```
 
-## Customization
+## Configuration
 
-You can find more information about redis configuration on [wodby/redis](https://github.com/wodby/redis).
+Configuration is possible via environment variables. See the full list of variables on [GitHub](https://github.com/wodby/redis).

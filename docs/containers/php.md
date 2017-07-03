@@ -29,7 +29,7 @@ If you would like to autostart xdebug, uncomment this line:
 PHP_XDEBUG_REMOTE_AUTOSTART: 1     # Comment out to disable (default).
 ```
 
-### Xdebug on Mac OS X
+### Xdebug on macOS
 
 There are two more things that need to be done on macOS in order to have Xdebug working (because there's no docker0 interface). Enable Xdebug as described in the previous section and uncomment the following two lines:
 
@@ -43,6 +43,7 @@ You also need to have loopback alias with IP from above. You need this only once
 ```bash
 sudo ifconfig lo0 alias 10.254.254.254
 ```
+
 ### Xdebug on Windows
 
 You should do same things as for Mac OS. Enable Xdebug as described in the previous 2 sections and replace value of _PHP_XDEBUG_REMOTE_HOST_ to your DockerNAT ip assigned (by default it should be 10.0.75.1):
@@ -53,6 +54,6 @@ PHP_XDEBUG_REMOTE_HOST: "10.0.75.1"  # Setting the host (localhost by default)
 
 You also need to check firewall not to block your connection. Disabling firewall should help.
 
-## Customization
+## Configuration
 
-See the list of environment variables available for customization at [wodby/wordpress-php](https://github.com/wodby/wordpress-php).
+Configuration is possible via environment variables. See the full list of variables on [GitHub](https://github.com/wodby/wordpress-php).

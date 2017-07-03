@@ -1,5 +1,26 @@
 # Docker4WordPress Changelog
 
+## 2.2.0
+
+* New [Apache 2.4 container](http://docs.docker4wordpress.org/en/latest/containers/apache)
+* New [AthenaPDF container](http://docs.docker4wordpress.org/en/latest/containers/athenapdf), drop-in replacement for wkhtmltopdf
+* WordPress: updated Vanilla WordPress 4.8
+* PHP: updated PHP 7: 7.0.20, 7.1.6
+* PHP: images rebased to Alpine Linux 3.6 and now use LibreSSL instead of OpenSSL
+* PHP: extension are now frozen, see https://github.com/wodby/php
+* PHP: runtime libraries are now frozen
+* PHP: mongoDB extension downgraded to 1.1.10
+* PHP: expose header now disabled by default
+* PHP: dropped few environment variables
+* PHP: APCu extension is now configurable
+* Nginx: new version 1.13, 1.12
+* Nginx: 1.10 dropped
+* Nginx: you can now override include of wordpress.conf file
+* MariaDB: revamped optimized configuration
+* Bug fix: resolved imagick segfault caused by a bug in ImageMagick library
+* Bug fix: some environment variables missed in SSH container
+* [New way](http://docs.docker4wordpress.org/en/latest/macos) to improve volumes performance on macOS] via user-guided caching
+
 ## 2.1.0
 
 * New 2.1.0 images for php, nginx, mariadb, redis and varnish

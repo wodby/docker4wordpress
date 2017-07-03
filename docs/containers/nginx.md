@@ -1,5 +1,8 @@
 # Nginx container
 
-Nginx is being used as a web server. 
+Nginx is being used as a default http server. 
 
-See the list of environment variables available for customization at [wodby/wordpress-nginx](https://github.com/wodby/wordpress-nginx).
+## Configuration
+
+Configuration is possible via environment variables. See the full list of variables on [GitHub](https://github.com/wodby/wordpress-nginx).
+ 
