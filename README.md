@@ -7,7 +7,7 @@
 
 ## Introduction
 
-Docker4WordPress is a set of docker images optimized for WordPress. Use docker-compose.yml file from this repository to WordPress stack on Linux, macOS and Windows. 
+Docker4WordPress is a set of docker images optimized for WordPress. Use docker-compose.yml file from this repository to spin up a local environment for WordPress on Linux, macOS and Windows. 
 
 Read [**Getting Started**](http://docker4wordpress.readthedocs.io).
 
