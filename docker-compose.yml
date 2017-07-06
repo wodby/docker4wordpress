@@ -29,43 +29,43 @@ services:
 #      - codebase:/var/www/html:cached # User-guided caching
 #      - docker-sync:/var/www/html # Docker-sync
 
-#  nginx:
-#    image: wodby/wordpress-nginx:4-1.13-2.2.0
-##    image: wodby/wordpress-nginx:4-1.12-2.2.0
-#    environment:
-#      NGINX_STATIC_CONTENT_OPEN_FILE_CACHE: "off"
-#      NGINX_ERROR_LOG_LEVEL: debug
-#      NGINX_BACKEND_HOST: php
-#      NGINX_SERVER_ROOT: /var/www/html
-#    volumes:
-#      - codebase:/var/www/html
-## Options for macOS users (http://docs.docker4wordpress.org/en/latest/macos)
-##      - codebase:/var/www/html:cached # User-guided caching
-##      - docker-sync:/var/www/html # Docker-sync
-#    depends_on:
-#      - php
-#    labels:
-#      - 'traefik.backend=nginx'
-#      - 'traefik.port=80'
-#      - 'traefik.frontend.rule=Host:wp.docker.localhost'
-
-  apache:
-    image: wodby/wordpress-apache:2.4-1.0.0
-    depends_on:
-      - php
+  nginx:
+    image: wodby/wordpress-nginx:4-1.13-2.2.0
+#    image: wodby/wordpress-nginx:4-1.12-2.2.0
     environment:
-      APACHE_LOG_LEVEL: debug
-      APACHE_BACKEND_HOST: php
-      APACHE_SERVER_ROOT: /var/www/html
+      NGINX_STATIC_CONTENT_OPEN_FILE_CACHE: "off"
+      NGINX_ERROR_LOG_LEVEL: debug
+      NGINX_BACKEND_HOST: php
+      NGINX_SERVER_ROOT: /var/www/html
     volumes:
       - codebase:/var/www/html
 # Options for macOS users (http://docs.docker4wordpress.org/en/latest/macos)
 #      - codebase:/var/www/html:cached # User-guided caching
 #      - docker-sync:/var/www/html # Docker-sync
+    depends_on:
+      - php
     labels:
-      - 'traefik.backend=apache'
+      - 'traefik.backend=nginx'
       - 'traefik.port=80'
       - 'traefik.frontend.rule=Host:wp.docker.localhost'
+
+#  apache:
+#    image: wodby/wordpress-apache:2.4-1.0.0
+#    depends_on:
+#      - php
+#    environment:
+#      APACHE_LOG_LEVEL: debug
+#      APACHE_BACKEND_HOST: php
+#      APACHE_SERVER_ROOT: /var/www/html
+#    volumes:
+#      - codebase:/var/www/html
+## Options for macOS users (http://docs.docker4wordpress.org/en/latest/macos)
+##      - codebase:/var/www/html:cached # User-guided caching
+##      - docker-sync:/var/www/html # Docker-sync
+#    labels:
+#      - 'traefik.backend=apache'
+#      - 'traefik.port=80'
+#      - 'traefik.frontend.rule=Host:wp.docker.localhost'
 
 #  varnish:
 #    image: wodby/wordpress-varnish:4.1-2.2.0
