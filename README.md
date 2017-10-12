@@ -51,7 +51,7 @@ Full documentation is available at http://docker4wordpress.readthedocs.io.
 
 ## Deployment
 
-Deploy docker-based WordPress stack to your own server via [![Wodby](https://www.google.com/s2/favicons?domain=wodby.com) Wodby](https://cloud.wodby.com/stackhub/dcca9437-eef2-4b3b-8ab2-b7c9c480a19e/detail).
+Deploy docker-based WordPress stack to your own server via [![Wodby](https://www.google.com/s2/favicons?domain=wodby.com) Wodby](https://cloud.wodby.com/stackhub/a54a0f59-f4fd-49af-ad16-8d9ff776c50e).
 
 ## License
 
