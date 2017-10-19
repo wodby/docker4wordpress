@@ -1,4 +1,4 @@
-# Apache container
+# Apache
 
 To set apache as a default container uncomment apache service definition and comment nginx service definition. 
 

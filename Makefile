@@ -2,10 +2,10 @@
 
 .PHONY: test
 
-wordpress ?= 4
-php ?= 7.1
+WORDPRESS_VER ?= 4
+PHP_VER ?= 7.1
 
 default: test
 
 test:
-	cd ./test/$(wordpress)/$(php) && ./run.sh
+	cd ./test/$(WORDPRESS_VER)/$(PHP_VER) && ./run.sh

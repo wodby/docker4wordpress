@@ -1,4 +1,4 @@
-# PHP container
+# PHP
 
 PHP is used with Nginx via PHP-FPM. 
 

@@ -1,4 +1,4 @@
-# Varnish containers
+# Varnish
 
 TBD
 

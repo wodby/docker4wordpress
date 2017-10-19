@@ -2,8 +2,8 @@
 
 set -e
 
-if [[ ! -z "${DEBUG}" ]]; then
-  set -x
+if [[ -n "${DEBUG}" ]]; then
+    set -x
 fi
 
 WP_DOMAIN="$( echo "${BASE_URL}" | sed 's/https\?:\/\///' )"

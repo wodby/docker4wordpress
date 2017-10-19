@@ -25,3 +25,5 @@ pages:
     - 'Redis': 'containers/redis.md'
     - 'Varnish': 'containers/varnish.md'
     - 'AthenaPDF': 'containers/athenapdf.md'
+    - 'Blackfire': 'containers/blackfire.md'
+    - 'Webgrind': 'containers/webgrind.md'

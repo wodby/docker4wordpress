@@ -14,34 +14,36 @@ Read [**Getting Started**](http://docker4wordpress.readthedocs.io).
 ## Stack
 
 [wodby/wordpress-nginx]: https://github.com/wodby/wordpress-nginx
-[wodby/wordpress-apache]: https://github.com/wodby/wordpress-apache
+[wodby/php-apache]: https://github.com/wodby/php-apache
 [wodby/wordpress]: https://github.com/wodby/wordpress
 [wodby/wordpress-php]: https://github.com/wodby/wordpress-php
 [wodby/mariadb]: https://github.com/wodby/mariadb
 [wodby/redis]: https://github.com/wodby/redis
 [wodby/wordpress-varnish]: https://github.com/wodby/wordpress-varnish
-[athenapdf-service]: https://hub.docker.com/r/arachnysdocker/athenapdf-service
-[phpmyadmin]: https://hub.docker.com/r/phpmyadmin/phpmyadmin
-[mailhog]: https://hub.docker.com/r/mailhog/mailhog
-[portainer]: https://hub.docker.com/r/portainer/portainer
+[arachnysdocker/athenapdf-service]: https://hub.docker.com/r/arachnysdocker/athenapdf-service
+[phpmyadmin/phpmyadmin]: https://hub.docker.com/r/phpmyadmin/phpmyadmin
+[mailhog/mailhog]: https://hub.docker.com/r/mailhog/mailhog
+[portainer/portainer]: https://hub.docker.com/r/portainer/portainer
 [_/traefik]: https://hub.docker.com/_/traefik
 
 The WordPress stack consist of the following containers:
 
-| Container | Versions | Service name | Image | Enabled by default |
-| --------- | -------- | ------------ | ----- | ------------------ |
-| Nginx      | 1.13, 1.12 | nginx     | [wodby/wordpress-nginx]   | ✓ |
-| Apache     | 2.4        | php       | [wodby/wordpress-apache]  |   |
-| WordPress  | 4          | php       | [wodby/wordpress]         | ✓ |
-| PHP        | 7.1, 7.0   | php       | [wodby/wordpress-php]     |   |
-| MariaDB    | 10.1       | mariadb   | [wodby/mariadb]           | ✓ |
-| Redis      | 3.2        | redis     | [wodby/redis]             |   |
-| Varnish    | 4.1        | varnish   | [wodby/wordpress-varnish] |   |
-| AthenaPDF  | latest     | athenapdf | [athenapdf-service]       |   |
-| phpMyAdmin | latest     | pma       | [phpmyadmin]              |   |
-| Mailhog    | latest     | mailhog   | [mailhog]                 | ✓ |
-| Portainer  | latest     | portainer | [portainer]               | ✓ |
-| Traefik    | latest     | traefik   | [_/traefik]               | ✓ |
+| Container  | Versions   | Service name | Image                              | Enabled by default |
+| ---------- | ---------- | ------------ | ---------------------------------- | ------------------ |
+| Nginx      | 1.13, 1.12 | nginx        | [wodby/wordpress-nginx]            | ✓                  |
+| Apache     | 2.4        | apache       | [wodby/php-apache]                 |                    |
+| WordPress  | 4          | php          | [wodby/wordpress]                  | ✓                  |
+| PHP        | 7.1, 7.0   | php          | [wodby/wordpress-php]              |                    |
+| MariaDB    | 10.1       | mariadb      | [wodby/mariadb]                    | ✓                  |
+| Redis      | 3.2        | redis        | [wodby/redis]                      |                    |
+| Varnish    | 4.1        | varnish      | [wodby/wordpress-varnish]          |                    |
+| AthenaPDF  | 2.10.0     | athenapdf    | [arachnysdocker/athenapdf-service] |                    |
+| Webgrind   | 1.5        | webgrind     | [wodby/webgrind]                   |                    |
+| Blackfire  | latest     | blackfire    | [blackfire/blackfire]              |                    |
+| phpMyAdmin | latest     | pma          | [phpmyadmin/phpmyadmin]            |                    |
+| Mailhog    | latest     | mailhog      | [mailhog/mailhog]                  | ✓                  |
+| Portainer  | latest     | portainer    | [portainer/portainer]              | ✓                  |
+| Traefik    | latest     | traefik      | [_/traefik]                        | ✓                  |
 
 Supported WordPress versions: 4
 
@@ -51,7 +53,7 @@ Full documentation is available at http://docker4wordpress.readthedocs.io.
 
 ## Deployment
 
-Deploy docker-based WordPress stack to your own server via [![Wodby](https://www.google.com/s2/favicons?domain=wodby.com) Wodby](https://cloud.wodby.com/stackhub/a54a0f59-f4fd-49af-ad16-8d9ff776c50e).
+Deploy docker-based WordPress stack with orchestrations to your own server via [![Wodby](https://www.google.com/s2/favicons?domain=wodby.com) Wodby](https://cloud.wodby.com/stackhub/a54a0f59-f4fd-49af-ad16-8d9ff776c50e).
 
 ## License
 
