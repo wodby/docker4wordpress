@@ -12,6 +12,9 @@ services:
   php:
     image: $WP4_PHP70
     environment:
+      WODBY_APP_NAME: drupal
+      DEBUG: 1
+      WP_VERSION: 4
       PHP_SENDMAIL_PATH: '/bin/true'
       BASE_URL: http://wordpress.docker.localhost
     volumes:
