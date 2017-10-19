@@ -15,6 +15,8 @@ The WordPress stack consist of the following containers:
 [wodby/mariadb]: https://github.com/wodby/mariadb
 [wodby/redis]: https://github.com/wodby/redis
 [wodby/wordpress-varnish]: https://github.com/wodby/wordpress-varnish
+[wodby/webgrind]: https://hub.docker.com/r/wodby/webgrind
+[blackfire/blackfire]: https://hub.docker.com/r/blackfire/blackfire
 [arachnysdocker/athenapdf-service]: https://hub.docker.com/r/arachnysdocker/athenapdf-service
 [phpmyadmin/phpmyadmin]: https://hub.docker.com/r/phpmyadmin/phpmyadmin
 [mailhog/mailhog]: https://hub.docker.com/r/mailhog/mailhog
