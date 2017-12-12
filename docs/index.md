@@ -13,6 +13,7 @@ The WordPress stack consist of the following containers:
 [wodby/wordpress]: https://github.com/wodby/wordpress
 [wodby/wordpress-php]: https://github.com/wodby/wordpress-php
 [wodby/mariadb]: https://github.com/wodby/mariadb
+[wodby/postgres]: https://github.com/wodby/postgres
 [wodby/redis]: https://github.com/wodby/redis
 [wodby/wordpress-varnish]: https://github.com/wodby/wordpress-varnish
 [wodby/webgrind]: https://hub.docker.com/r/wodby/webgrind
@@ -32,22 +33,23 @@ The WordPress stack consist of the following containers:
 [Blackfire]: containers/blackfire.md
 [AthenaPDF]: containers/athenapdf.md
 
-| Container   | Versions   | Service name | Image                              | Enabled by default |
-| ----------- | ---------- | ------------ | ---------------------------------- | ------------------ |
-| [Nginx]     | 1.13, 1.12 | nginx        | [wodby/wordpress-nginx]            | ✓                  |
-| [Apache]    | 2.4        | apache       | [wodby/php-apache]                 |                    |
-| WordPress   | 4          | php          | [wodby/wordpress]                  | ✓                  |
-| [PHP]       | 7.1, 7.0   | php          | [wodby/wordpress-php]              |                    |
-| [MariaDB]   | 10.1       | mariadb      | [wodby/mariadb]                    | ✓                  |
-| [Redis]     | 3.2        | redis        | [wodby/redis]                      |                    |
-| [Varnish]   | 4.1        | varnish      | [wodby/wordpress-varnish]          |                    |
-| [Webgrind]  | 1.5        | webgrind     | [wodby/webgrind]                   |                    |
-| [Blackfire] | latest     | blackfire    | [blackfire/blackfire]              |                    |
-| [AthenaPDF] | 2.10.0     | athenapdf    | [arachnysdocker/athenapdf-service] |                    |
-| phpMyAdmin  | latest     | pma          | [phpmyadmin/phpmyadmin]            |                    |
-| Mailhog     | latest     | mailhog      | [mailhog/mailhog]                  | ✓                  |
-| Portainer   | latest     | portainer    | [portainer/portainer]              | ✓                  |
-| Traefik     | latest     | traefik      | [_/traefik]                        | ✓                  |
+| Container    | Versions   | Service name | Image                              | Enabled by default |
+| ------------ | ---------- | ------------ | ---------------------------------- | ------------------ |
+| [Nginx]      | 1.13, 1.12 | `nginx`      | [wodby/wordpress-nginx]            | ✓                  |
+| [Apache]     | 2.4        | `apache`     | [wodby/php-apache]                 |                    |
+| WordPress    | 4          | `php`        | [wodby/wordpress]                  | ✓                  |
+| [PHP]        | 7.x, 5.6   | `php`        | [wodby/wordpress-php]              |                    |
+| [MariaDB]    | 10.2, 10.1 | `mariadb`    | [wodby/mariadb]                    | ✓                  |
+| [PostgreSQL] | 10.1, 9.6  | `postgres`   | [wodby/postgres]                   |                    |
+| [Redis]      | 4.0, 3.2   | `redis`      | [wodby/redis]                      |                    |
+| [Varnish]    | 4.1        | `varnish`    | [wodby/wordpress-varnish]          |                    |
+| [Webgrind]   | 1.5        | `webgrind`   | [wodby/webgrind]                   |                    |
+| [Blackfire]  | latest     | `blackfire`  | [blackfire/blackfire]              |                    |
+| [AthenaPDF]  | 2.10.0     | `athenapdf`  | [arachnysdocker/athenapdf-service] |                    |
+| phpMyAdmin   | latest     | `pma`        | [phpmyadmin/phpmyadmin]            |                    |
+| Mailhog      | latest     | `mailhog`    | [mailhog/mailhog]                  | ✓                  |
+| Portainer    | latest     | `portainer`  | [portainer/portainer]              | ✓                  |
+| Traefik      | latest     | `traefik`    | [_/traefik]                        | ✓                  |
 
 Supported WordPress versions: 4
 

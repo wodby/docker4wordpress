@@ -2,7 +2,8 @@ version: "2"
 
 services:
   mariadb:
-    image: wodby/mariadb:10.1-2.3.5
+    image: wodby/mariadb:10.2-3.0.2
+#    image: wodby/mariadb:10.1-3.0.2
     environment:
       MYSQL_ROOT_PASSWORD: password
       MYSQL_DATABASE: wordpress
@@ -12,13 +13,33 @@ services:
 #      - ./mariadb-init:/docker-entrypoint-initdb.d # Place init .sql file(s) here.
 #      - /path/to/mariadb/data/on/host:/var/lib/mysql # I want to manage volumes manually.
 
+#  postgres:
+#    image: wodby/postgres:10.1-1.2.0
+##    image: wodby/postgres:9.6-1.2.0
+#    environment:
+#      POSTGRES_PASSWORD: password
+#      POSTGRES_DB: wordpress
+#      POSTGRES_USER: wordpress
+#    volumes:
+#      - ./postgres-init:/docker-entrypoint-initdb.d # Place init file(s) here.
+#      - /path/to/postgres/data/on/host:/var/lib/postgresql/data # I want to manage volumes manually.
+
   php:
-    image: wodby/wordpress:4-7.1-3.0.0
-#    image: wodby/wordpress:4-7.0-3.0.0
-#    image: wodby/wordpress:4-5.6-3.0.0
-#    image: wodby/wordpress-php:7.1-3.0.0
-#    image: wodby/wordpress-php:7.0-3.0.0
-#    image: wodby/wordpress-php:5.6-3.0.0
+# 1. Images with vanilla WordPress – wodby/wordpress:[WP_VERSION]-[PHP_VERSION]-[STABILITY_TAG].
+    image: wodby/wordpress:4-7.2-3.3.1
+#    image: wodby/wordpress:4-7.1-3.3.1
+#    image: wodby/wordpress:4-7.0-3.3.1
+#    image: wodby/wordpress:4-5.6-3.3.1
+# 2. Images without WordPress – wodby/wordpress-php:[PHP_VERSION]-[STABILITY_TAG].
+#    image: wodby/wordpress-php:7.2-3.3.1
+#    image: wodby/wordpress-php:7.1-3.3.1
+#    image: wodby/wordpress-php:7.0-3.3.1
+#    image: wodby/wordpress-php:5.6-3.3.1
+# 3. Images without WordPress – wodby/wordpress-php:[PHP_VERSION]-[STABILITY_TAG].Version for development (--enable-debug)
+#    image: wodby/wordpress-php:7.2-dev-3.3.1
+#    image: wodby/wordpress-php:7.1-dev-3.3.1
+#    image: wodby/wordpress-php:7.0-dev-3.3.1
+#    image: wodby/wordpress-php:5.6-dev-3.3.1
     environment:
       PHP_SENDMAIL_PATH: /usr/sbin/sendmail -t -i -S mailhog:1025
       PHP_FPM_CLEAR_ENV: "no"
@@ -37,8 +58,8 @@ services:
 #      - files:/mnt/files
 
   nginx:
-    image: wodby/wordpress-nginx:4-1.13-3.0.1
-#    image: wodby/wordpress-nginx:4-1.12-3.0.1
+    image: wodby/wordpress-nginx:4-1.13-3.0.2
+#    image: wodby/wordpress-nginx:4-1.12-3.0.2
     environment:
       NGINX_STATIC_CONTENT_OPEN_FILE_CACHE: "off"
       NGINX_ERROR_LOG_LEVEL: debug
@@ -56,7 +77,7 @@ services:
       - 'traefik.frontend.rule=Host:wp.docker.localhost'
 
 #  apache:
-#    image: wodby/php-apache:2.4-2.0.0
+#    image: wodby/php-apache:2.4-2.0.2
 #    depends_on:
 #      - php
 #    environment:
@@ -74,7 +95,7 @@ services:
 #      - 'traefik.frontend.rule=Host:wp.docker.localhost'
 
 #  varnish:
-#    image: wodby/wordpress-varnish:4.1-2.2.0
+#    image: wodby/wordpress-varnish:4.1-2.3.1
 #    depends_on:
 #      - nginx
 #    environment:
@@ -87,8 +108,8 @@ services:
 #      - 'traefik.frontend.rule=Host:varnish.wp.docker.localhost'
 
 #  redis:
-#    image: wodby/redis:3.2-2.1.3
-##    image: wodby/redis:3.2-2.1.3
+#    image: wodby/redis:4.0-2.1.4
+##    image: wodby/redis:3.2-2.1.4
 
 #  pma:
 #    image: phpmyadmin/phpmyadmin
