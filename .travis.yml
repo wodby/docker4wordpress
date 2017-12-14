@@ -1,24 +1,14 @@
 language: bash
 
-sudo: required
-
 services:
   - docker
 
 env:
-  global:
-    - DOCKER_COMPOSE_VERSION=1.10.0
   matrix:
     - WORDPRESS_VER=4 PHP_VER=7.2
     - WORDPRESS_VER=4 PHP_VER=7.1
     - WORDPRESS_VER=4 PHP_VER=7.0
     - WORDPRESS_VER=4 PHP_VER=5.6
-
-install:
-  - sudo rm /usr/local/bin/docker-compose
-  - curl -L "https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-$(uname -s)-$(uname -m)" > docker-compose
-  - chmod +x docker-compose
-  - sudo mv docker-compose /usr/local/bin
 
 script:
   - make test
@@ -35,3 +25,8 @@ deploy:
     - traefik.yml
   on:
     tags: true
+
+notifications:
+  slack:
+    on_failure: never
+    secure: "QK1v3v7bNcgD3CvuUjzTEYOCTIzO/WlJziL1CAH8k9lxUepbpxhC26O4v0DBXEjwNKgolP7CAjdaNAItFgjPvIXQHM+jSr4FcLWndF4I99CdzA0Ql7zzC0sgtw1vG9tzR4oauLLI8lemmVdqZmFgQ3G063YSHTD0o8LfFmMtPCqQzjKq9Cx2QOIdgOGmjeODd6My0ZM+MhbtoTNGdm1M3J4IRIHM0wKQir+Bd9dYpW1itgYzHCugaYzc+ITaP472dqsa+ickR5eu5oWFuGbqHcCa4s/oWVBdxwJ9gp8dc4YfaetWNiNPSvqKPlTcCdFuteO9oHO/VNVXtUOJs0ZfZuaAvlopdwhkncGWq5xeAF9ImauIAzNCh2RuYrRAtqqBWxhiqjybUBI9YM1A9rPZWJrP8kxVq+8UD0tfHCwcnMv1xPCsZ/EmwzMBZw8ujJBZu4d3BOmxSvAxd4RsIEJrTewcLbNCvPaARNscD1yMWHdqx6o3G6tomQ3mZkf0q1iBCYu6gmDNwQ3Y3ruE5Db2hoCwwyo656ahakTT3R8f2+wGvJ4jWE0ve+rZMPGd7NKWQIwqHVSRZv7Fg86Sz/h1vBAEXMFWYoOO3bFt71tTKBk/l4OcNQbDxNm7UsyMQqFlSAey98tk9BNoV51yNQ0jlJVN1yD7B3eh/9jb1bkJTtw="
