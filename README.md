@@ -1,6 +1,5 @@
 # Docker-based WordPress Stack
 
-[![Documentation Status](https://readthedocs.org/projects/docker4wordpress/badge/?version=latest)](http://docs.docker4wordpress.org)
 [![Build Status](https://travis-ci.org/wodby/docker4wordpress.svg?branch=master)](https://travis-ci.org/wodby/docker4wordpress)
 [![Wodby Slack](http://slack.wodby.com/badge.svg)](http://slack.wodby.com)
 [![Wodby Twitter](https://img.shields.io/twitter/follow/wodbyhq.svg?style=social&label=Follow)](https://twitter.com/wodbyhq)
@@ -9,7 +8,7 @@
 
 Docker4WordPress is a set of docker images optimized for WordPress. Use docker-compose.yml file from this repository to spin up a local environment for WordPress on Linux, macOS and Windows. 
 
-Read [**Getting Started**](http://docker4wordpress.readthedocs.io).
+Read [**Quick Start**](https://wodby.com/stacks/wordpress/docs/local/quick-start/).
 
 ## Stack
 
@@ -53,7 +52,7 @@ Supported WordPress versions: 4
 
 ## Documentation
 
-Full documentation is available at http://docker4wordpress.readthedocs.io.
+Full documentation is available at https://wodby.com/stacks/wordpress/docs/local
 
 ## Deployment
 
