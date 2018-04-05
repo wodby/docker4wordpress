@@ -8,7 +8,7 @@ env:
     - WORDPRESS_VER=4 PHP_VER=7.2
     - WORDPRESS_VER=4 PHP_VER=7.1
     - WORDPRESS_VER=4 PHP_VER=7.0
-    - WORDPRESS_VER=4 PHP_VER=5.6
+    - WORDPRESS_VER=4 PHP_VER=5.6 GITHUB_RELEASE=1
 
 script:
   - set -e
@@ -26,3 +26,4 @@ deploy:
     - docker4wordpress.tar.gz
   on:
     tags: true
+    condition: $GITHUB_RELEASE = 1
