@@ -20,6 +20,10 @@ Read [**Quick Start**](https://wodby.com/stacks/wordpress/docs/local/quick-start
 [wodby/postgres]: https://github.com/wodby/postgres
 [wodby/redis]: https://github.com/wodby/redis
 [wodby/wordpress-varnish]: https://github.com/wodby/wordpress-varnish
+[wodby/node]: https://github.com/wodby/node
+[wodby/solr]: https://github.com/wodby/solr
+[wodby/elasticsearch]: https://github.com/wodby/elasticsearch
+[wodby/kibana]: https://github.com/wodby/kibana
 [wodby/webgrind]: https://hub.docker.com/r/wodby/webgrind
 [blackfire/blackfire]: https://hub.docker.com/r/blackfire/blackfire
 [arachnysdocker/athenapdf-service]: https://hub.docker.com/r/arachnysdocker/athenapdf-service
@@ -30,23 +34,27 @@ Read [**Quick Start**](https://wodby.com/stacks/wordpress/docs/local/quick-start
 
 The WordPress stack consist of the following containers:
 
-| Container  | Versions   | Service name | Image                              | Enabled by default |
-| ---------- | ---------- | ------------ | ---------------------------------- | ------------------ |
-| Nginx      | 1.13, 1.12 | `nginx`      | [wodby/wordpress-nginx]            | ✓                  |
-| Apache     | 2.4        | `apache`     | [wodby/php-apache]                 |                    |
-| WordPress  | 4          | `php`        | [wodby/wordpress]                  | ✓                  |
-| PHP        | 7.x, 5.6   | `php`        | [wodby/wordpress-php]              |                    |
-| MariaDB    | 10.2, 10.1 | `mariadb`    | [wodby/mariadb]                    | ✓                  |
-| PostgreSQL | 10.1, 9.6  | `postgres`   | [wodby/postgres]                   |                    |
-| Redis      | 4.0, 3.2   | `redis`      | [wodby/redis]                      |                    |
-| Varnish    | 4.1        | `varnish`    | [wodby/wordpress-varnish]          |                    |
-| AthenaPDF  | 2.10.0     | `athenapdf`  | [arachnysdocker/athenapdf-service] |                    |
-| Webgrind   | 1.5        | `webgrind`   | [wodby/webgrind]                   |                    |
-| Blackfire  | latest     | `blackfire`  | [blackfire/blackfire]              |                    |
-| phpMyAdmin | latest     | `pma`        | [phpmyadmin/phpmyadmin]            |                    |
-| Mailhog    | latest     | `mailhog`    | [mailhog/mailhog]                  | ✓                  |
-| Portainer  | latest     | `portainer`  | [portainer/portainer]              | ✓                  |
-| Traefik    | latest     | `traefik`    | [_/traefik]                        | ✓                  |
+| Container     | Versions           | Service name    | Image                              | Enabled by default |
+| ------------- | ------------------ | ------------    | ---------------------------------- | ------------------ |
+| Nginx         | 1.14, 1.13         | `nginx`         | [wodby/wordpress-nginx]            | ✓                  |
+| Apache        | 2.4                | `apache`        | [wodby/php-apache]                 |                    |
+| WordPress     | 4                  | `php`           | [wodby/wordpress]                  | ✓                  |
+| PHP           | 7.x, 5.6           | `php`           | [wodby/wordpress-php]              |                    |
+| MariaDB       | 10.2, 10.1         | `mariadb`       | [wodby/mariadb]                    | ✓                  |
+| PostgreSQL    | 10.1, 9.6          | `postgres`      | [wodby/postgres]                   |                    |
+| Redis         | 4.0, 3.2           | `redis`         | [wodby/redis]                      |                    |
+| Varnish       | 4.1                | `varnish`       | [wodby/wordpress-varnish]          |                    |
+| Node          | 9, 8               | `node`          | [wodby/node]                       |                    |
+| Solr          | 7.x, 6.x, 5.5, 5.4 | `solr`          | [wodby/solr]                       |                    |
+| Elasticsearch | 6.x, 5.6, 5.5, 5.4 | `elasticsearch` | [wodby/elasticsearch]              |                    |
+| Kibana        | 6.x, 5.6, 5.5, 5.4 | `kibana`        | [wodby/kibana]                     |                    |
+| AthenaPDF     | 2.10.0             | `athenapdf`     | [arachnysdocker/athenapdf-service] |                    |
+| Webgrind      | 1.5                | `webgrind`      | [wodby/webgrind]                   |                    |
+| Blackfire     | latest             | `blackfire`     | [blackfire/blackfire]              |                    |
+| phpMyAdmin    | latest             | `pma`           | [phpmyadmin/phpmyadmin]            |                    |
+| Mailhog       | latest             | `mailhog`       | [mailhog/mailhog]                  | ✓                  |
+| Portainer     | latest             | `portainer`     | [portainer/portainer]              | ✓                  |
+| Traefik       | latest             | `traefik`       | [_/traefik]                        | ✓                  |
 
 Supported WordPress versions: 4
 

@@ -105,6 +105,7 @@ services:
 #      VARNISH_SECRET: secret
 #      VARNISH_BACKEND_HOST: nginx
 #      VARNISH_BACKEND_PORT: 80
+#      VARNISH_PURGE_KEY: key
 #    labels:
 #      - 'traefik.backend=varnish'
 #      - 'traefik.port=6081'
@@ -167,6 +168,16 @@ services:
 #    environment:
 #      BLACKFIRE_SERVER_ID: XXXXX
 #      BLACKFIRE_SERVER_TOKEN: YYYYY
+
+#  solr:
+#    image: wodby/solr:$SOLR_TAG
+#    container_name: "${PROJECT_NAME}_solr"
+#    environment:
+#      SOLR_HEAP: 1024m
+#    labels:
+#      - 'traefik.backend=solr'
+#      - 'traefik.port=8983'
+#      - 'traefik.frontend.rule=Host:solr.${PROJECT_BASE_URL}'
 
 #  elasticsearch:
 #    image: wodby/elasticsearch:$ELASTICSEARCH_TAG
