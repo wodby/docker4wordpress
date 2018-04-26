@@ -168,6 +168,38 @@ services:
 #      BLACKFIRE_SERVER_ID: XXXXX
 #      BLACKFIRE_SERVER_TOKEN: YYYYY
 
+#  elasticsearch:
+#    image: wodby/elasticsearch:$ELASTICSEARCH_TAG
+#    environment:
+#      ES_JAVA_OPTS: "-Xms500m -Xmx500m"
+#    ulimits:
+#      memlock:
+#        soft: -1
+#        hard: -1
+
+#  kibana:
+#    image: wodby/kibana:$KIBANA_TAG
+#    depends_on:
+#      - elasticsearch
+#    labels:
+#      - 'traefik.backend=kibana'
+#      - 'traefik.port=5601'
+#      - 'traefik.frontend.rule=Host:kibana.php.docker.localhost'
+
+#  node:
+#    image: wodby/node:$NODE_TAG
+#    container_name: "${PROJECT_NAME}_node"
+#    working_dir: /app
+#    labels:
+#      - 'traefik.backend=node'
+#      - 'traefik.port=3000'
+#      - 'traefik.frontend.rule=Host:front.${PROJECT_BASE_URL}'
+#    expose:
+#      - "3000"
+#    volumes:
+#      - ./path/to/your/single-page-app:/app
+#    command: sh -c 'npm install && npm run start'
+
   portainer:
     image: portainer/portainer
     container_name: "${PROJECT_NAME}_portainer"
