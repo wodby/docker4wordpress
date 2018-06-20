@@ -36,11 +36,11 @@ The WordPress stack consist of the following containers:
 
 | Container     | Versions           | Service name    | Image                              | Enabled by default |
 | ------------- | ------------------ | ------------    | ---------------------------------- | ------------------ |
-| Nginx         | 1.14, 1.13         | `nginx`         | [wodby/wordpress-nginx]            | ✓                  |
+| Nginx         | 1.15, 1.14, 1.13   | `nginx`         | [wodby/wordpress-nginx]            | ✓                  |
 | Apache        | 2.4                | `apache`        | [wodby/php-apache]                 |                    |
 | WordPress     | 4                  | `php`           | [wodby/wordpress]                  | ✓                  |
 | PHP           | 7.x, 5.6           | `php`           | [wodby/wordpress-php]              |                    |
-| MariaDB       | 10.2, 10.1         | `mariadb`       | [wodby/mariadb]                    | ✓                  |
+| MariaDB       | 10.3, 10.2, 10.1   | `mariadb`       | [wodby/mariadb]                    | ✓                  |
 | PostgreSQL    | 10.1, 9.6          | `postgres`      | [wodby/postgres]                   |                    |
 | Redis         | 4.0, 3.2           | `redis`         | [wodby/redis]                      |                    |
 | Varnish       | 4.1                | `varnish`       | [wodby/wordpress-varnish]          |                    |
