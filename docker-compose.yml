@@ -212,6 +212,18 @@ services:
 #      - ./path/to/your/single-page-app:/app
 #    command: sh -c 'npm install && npm run start'
 
+#  memcached:
+#    container_name: "${PROJECT_NAME}_memcached"
+#    image: wodby/memcached:$MEMCACHED_TAG
+
+#  opensmtpd:
+#    container_name: "${PROJECT_NAME}_opensmtpd"
+#    image: wodby/opensmtpd:$OPENSMTPD_TAG
+
+#  rsyslog:
+#    container_name: "${PROJECT_NAME}_rsyslog"
+#    image: wodby/rsyslog:$RSYSLOG_TAG
+
   portainer:
     image: portainer/portainer
     container_name: "${PROJECT_NAME}_portainer"
