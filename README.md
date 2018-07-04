@@ -35,6 +35,7 @@ The WordPress stack consist of the following containers:
 | [Mailhog]     | latest             | `mailhog`       | [mailhog/mailhog]                  | ✓       |
 | [OpenSMTPD]   | 6.0                | `opensmtpd`     | [wodby/opensmtpd]                  |         |
 | [Rsyslog]     | latest             | `rsyslog`       | [wodby/rsyslog]                    |         |
+| Adminer    | latest             | `pma`           | [phpmyadmin/phpmyadmin]            |         |
 | phpMyAdmin    | latest             | `pma`           | [phpmyadmin/phpmyadmin]            |         |
 | Portainer     | latest             | `portainer`     | [portainer/portainer]              | ✓       |
 | Traefik       | latest             | `traefik`       | [_/traefik]                        | ✓       |
