@@ -25,7 +25,7 @@ The WordPress stack consist of the following containers:
 | [Redis]       | 4.0, 3.2           | `redis`         | [wodby/redis]                      |         |
 | [Varnish]     | 4.1                | `varnish`       | [wodby/wordpress-varnish]          |         |
 | [Node.js]     | 9.11, 8.11, 6.14   | `node`          | [wodby/node]                       |         |
-| [Solr]        | 7.x, 6.x, 5.5, 5.4 | `solr`          | [wodby/solr]                       |         |
+| [Solr]        | 7.x, 6.6, 5.5, 5.4 | `solr`          | [wodby/solr]                       |         |
 | Elasticsearch | 6.x, 5.6, 5.5, 5.4 | `elasticsearch` | [wodby/elasticsearch]              |         |
 | Kibana        | 6.x, 5.6, 5.5, 5.4 | `kibana`        | [wodby/kibana]                     |         |
 | [Memcached]   | 1.5                | `memcached`     | [wodby/memcached]                  |         |
@@ -35,7 +35,7 @@ The WordPress stack consist of the following containers:
 | [Mailhog]     | latest             | `mailhog`       | [mailhog/mailhog]                  | ✓       |
 | [OpenSMTPD]   | 6.0                | `opensmtpd`     | [wodby/opensmtpd]                  |         |
 | [Rsyslog]     | latest             | `rsyslog`       | [wodby/rsyslog]                    |         |
-| Adminer    | latest             | `pma`           | [phpmyadmin/phpmyadmin]            |         |
+| Adminer       | 4.6                | `pma`           | [wodby/adminer]                    |         |
 | phpMyAdmin    | latest             | `pma`           | [phpmyadmin/phpmyadmin]            |         |
 | Portainer     | latest             | `portainer`     | [portainer/portainer]              | ✓       |
 | Traefik       | latest             | `traefik`       | [_/traefik]                        | ✓       |
