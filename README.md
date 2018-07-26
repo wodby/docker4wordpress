@@ -1,14 +1,14 @@
 # Docker-based WordPress Stack
 
 [![Build Status](https://travis-ci.org/wodby/docker4wordpress.svg?branch=master)](https://travis-ci.org/wodby/docker4wordpress)
-[![Wodby Slack](http://slack.wodby.com/badge.svg)](http://slack.wodby.com)
-[![Wodby Twitter](https://img.shields.io/twitter/follow/wodbyhq.svg?style=social&label=Follow)](https://twitter.com/wodbyhq)
 
 ## Introduction
 
 Docker4WordPress is a set of docker images optimized for WordPress. Use docker-compose.yml file from this repository to spin up a local environment for WordPress on Linux, macOS and Windows. 
 
-Read [**Quick Start**](https://wodby.com/stacks/wordpress/docs/local/quick-start/).
+* Read the docs on [**how to use**](https://docs.wodby.com/stacks/wordpress/local#usage)
+* Follow [us on Twitter](https://twitter.com/wodbyhq) to track future updates
+* Join [community slack](https://slack.wodby.com) to ask questions
 
 ## Stack
 
@@ -44,11 +44,11 @@ Supported WordPress versions: 4
 
 ## Documentation
 
-Full documentation is available at https://wodby.com/stacks/wordpress/docs/local
+Full documentation is available at https://docs.wodby.com/stacks/wordpress/local.
 
-## Deployment
+## Beyond local environment
 
-Deploy docker-based WordPress stack with orchestrations to your own server via [![Wodby](https://www.google.com/s2/favicons?domain=wodby.com) Wodby](https://cloud.wodby.com/stackhub/a54a0f59-f4fd-49af-ad16-8d9ff776c50e).
+Docker4WordPress is a project designed to help you to spin up local environment with docker-compose. If you want to deploy a consistent stack with orchestrations to your own server, check out [![WordPress stack on Wodby](https://www.google.com/s2/favicons?domain=wodby.com) Wodby](https://wodby.com/stacks/wordpress).
 
 ## License
 
