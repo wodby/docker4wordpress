@@ -40,15 +40,16 @@ services:
 #      - files:/mnt/files
 
   nginx:
-    image: wodby/wordpress-nginx:$NGINX_TAG
+    image: wodby/nginx:$NGINX_TAG
     container_name: "${PROJECT_NAME}_nginx"
     depends_on:
       - php
     environment:
 #      NGINX_PAGESPEED: "on"
-      NGINX_STATIC_CONTENT_OPEN_FILE_CACHE: "off"
+      NGINX_STATIC_OPEN_FILE_CACHE: "off"
       NGINX_ERROR_LOG_LEVEL: debug
       NGINX_BACKEND_HOST: php
+      NGINX_VHOST_PRESET: wordpress
     volumes:
       - ./:/var/www/html
 # Options for macOS users (https://wodby.com/stacks/wordpress/docs/local/docker-for-mac/)
@@ -80,13 +81,14 @@ services:
 #      - /path/to/postgres/data/on/host:/var/lib/postgresql/data # I want to manage volumes manually.
 
 #  apache:
-#    image: wodby/php-apache:$APACHE_TAG
+#    image: wodby/apache:$APACHE_TAG
 #    container_name: "${PROJECT_NAME}_apache"
 #    depends_on:
 #      - php
 #    environment:
 #      APACHE_LOG_LEVEL: debug
 #      APACHE_BACKEND_HOST: php
+#      APACHE_VHOST_PRESET: wordpress
 #    volumes:
 #      - ./:/var/www/html
 ## For macOS users (https://wodby.com/stacks/wordpress/docs/local/docker-for-mac/)

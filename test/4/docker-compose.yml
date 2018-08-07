@@ -25,11 +25,12 @@ services:
       - ./tests:/usr/local/bin/tests
 
   nginx:
-    image: wodby/wordpress-nginx:$NGINX_TAG
+    image: wodby/nginx:$NGINX_TAG
     environment:
-      NGINX_STATIC_CONTENT_OPEN_FILE_CACHE: "off"
+      NGINX_STATIC_OPEN_FILE_CACHE: "off"
       NGINX_ERROR_LOG_LEVEL: debug
       NGINX_BACKEND_HOST: php
+      NGINX_VHOST_PRESET: wordpress
     volumes:
       - codebase:/var/www/html/
     depends_on:
