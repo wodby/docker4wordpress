@@ -22,7 +22,7 @@ services:
       BASE_URL: http://$PROJECT_BASE_URL
     volumes:
       - codebase:/var/www/html/
-      - ./tests:/usr/local/bin/tests
+      - ./tests.sh:/usr/local/bin/tests.sh
 
   nginx:
     image: wodby/nginx:$NGINX_TAG
@@ -37,15 +37,14 @@ services:
       - php
 
   varnish:
-    image: wodby/wordpress-varnish:$VARNISH_TAG
+    image: wodby/varnish:$VARNISH_TAG
     depends_on:
       - nginx
     environment:
       VARNISH_SECRET: secret
       VARNISH_BACKEND_HOST: nginx
       VARNISH_BACKEND_PORT: 80
-      VARNISH_MEMORY_SIZE: 256M
-      VARNISH_STORAGE_SIZE: 1024M
+      VARNISH_CONFIG_PRESET: wordpress
 
   redis:
     image: wodby/redis:$REDIS_TAG

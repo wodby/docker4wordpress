@@ -100,7 +100,7 @@ services:
 #      - 'traefik.frontend.rule=Host:${PROJECT_BASE_URL}'
 
 #  varnish:
-#    image: wodby/wordpress-varnish:$VARNISH_TAG
+#    image: wodby/varnish:$VARNISH_TAG
 #    container_name: "${PROJECT_NAME}_varnish"
 #    depends_on:
 #      - nginx
@@ -109,6 +109,8 @@ services:
 #      VARNISH_BACKEND_HOST: nginx
 #      VARNISH_BACKEND_PORT: 80
 #      VARNISH_PURGE_KEY: key
+#      VARNISH_CONFIG_PRESET: wordpress
+#      VARNISH_PURGE_EXTERNAL_REQUEST_HEADER: X-Real-IP
 #    labels:
 #      - 'traefik.backend=varnish'
 #      - 'traefik.port=6081'

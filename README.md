@@ -16,15 +16,15 @@ The WordPress stack consist of the following containers:
 
 | Container     | Versions           | Service name    | Image                              | Default |
 | ------------- | ------------------ | ------------    | ---------------------------------- | ------- |
-| [Nginx]       | 1.15, 1.14, 1.13   | `nginx`         | [wodby/wordpress-nginx]            | ✓       |
-| [Apache]      | 2.4                | `apache`        | [wodby/php-apache]                 |         |
+| [Nginx]       | 1.15, 1.14         | `nginx`         | [wodby/nginx]                      | ✓       |
+| [Apache]      | 2.4                | `apache`        | [wodby/apache]                     |         |
 | [WordPress]   | 4                  | `php`           | [wodby/wordpress]                  | ✓       |
 | [PHP]         | 7.x, 5.6           | `php`           | [wodby/wordpress-php]              |         |
 | [MariaDB]     | 10.3, 10.2, 10.1   | `mariadb`       | [wodby/mariadb]                    | ✓       |
 | [PostgreSQL]  | 10, 9.x            | `postgres`      | [wodby/postgres]                   |         |
 | [Redis]       | 4.0, 3.2           | `redis`         | [wodby/redis]                      |         |
-| [Varnish]     | 4.1                | `varnish`       | [wodby/wordpress-varnish]          |         |
-| [Node.js]     | 9.11, 8.11, 6.14   | `node`          | [wodby/node]                       |         |
+| [Varnish]     | 4.1                | `varnish`       | [wodby/varnish]                    |         |
+| [Node.js]     | 10.9, 8.11, 6.14   | `node`          | [wodby/node]                       |         |
 | [Solr]        | 7.x, 6.6, 5.5      | `solr`          | [wodby/solr]                       |         |
 | Elasticsearch | 6.x, 5.6, 5.5, 5.4 | `elasticsearch` | [wodby/elasticsearch]              |         |
 | Kibana        | 6.x, 5.6, 5.5, 5.4 | `kibana`        | [wodby/kibana]                     |         |
@@ -95,7 +95,7 @@ This project is licensed under the MIT open source license.
 [wodby/rsyslog]: https://github.com/wodby/rsyslog
 [wodby/solr]: https://github.com/wodby/solr
 [wodby/webgrind]: https://hub.docker.com/r/wodby/webgrind
-[wodby/wordpress-nginx]: https://github.com/wodby/wordpress-nginx
+[wodby/nginx]: https://github.com/wodby/nginx
+[wodby/varnish]: https://github.com/wodby/varnish
 [wodby/wordpress-php]: https://github.com/wodby/wordpress-php
-[wodby/wordpress-varnish]: https://github.com/wodby/wordpress-varnish
 [wodby/wordpress]: https://github.com/wodby/wordpress
