@@ -89,7 +89,7 @@ This project is licensed under the MIT open source license.
 [wodby/memcached]: https://github.com/wodby/memcached
 [wodby/node]: https://github.com/wodby/node
 [wodby/opensmtpd]: https://github.com/wodby/opensmtpd
-[wodby/php-apache]: https://github.com/wodby/php-apache
+[wodby/apache]: https://github.com/wodby/apache
 [wodby/postgres]: https://github.com/wodby/postgres
 [wodby/redis]: https://github.com/wodby/redis
 [wodby/rsyslog]: https://github.com/wodby/rsyslog
