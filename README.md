@@ -14,31 +14,31 @@ Docker4WordPress is a set of docker images optimized for WordPress. Use docker-c
 
 The WordPress stack consist of the following containers:
 
-| Container     | Versions           | Service name    | Image                              | Default |
-| ------------- | ------------------ | ------------    | ---------------------------------- | ------- |
-| [Nginx]       | 1.15, 1.14         | `nginx`         | [wodby/nginx]                      | ✓       |
-| [Apache]      | 2.4                | `apache`        | [wodby/apache]                     |         |
-| [WordPress]   | 4                  | `php`           | [wodby/wordpress]                  | ✓       |
-| [PHP]         | 7.x, 5.6           | `php`           | [wodby/wordpress-php]              |         |
-| [MariaDB]     | 10.3, 10.2, 10.1   | `mariadb`       | [wodby/mariadb]                    | ✓       |
-| [PostgreSQL]  | 10, 9.x            | `postgres`      | [wodby/postgres]                   |         |
-| [Redis]       | 4.0, 3.2           | `redis`         | [wodby/redis]                      |         |
-| [Varnish]     | 4.1                | `varnish`       | [wodby/varnish]                    |         |
-| [Node.js]     | 10.9, 8.11, 6.14   | `node`          | [wodby/node]                       |         |
-| [Solr]        | 7.x, 6.6, 5.5      | `solr`          | [wodby/solr]                       |         |
-| Elasticsearch | 6.x, 5.6, 5.5, 5.4 | `elasticsearch` | [wodby/elasticsearch]              |         |
-| Kibana        | 6.x, 5.6, 5.5, 5.4 | `kibana`        | [wodby/kibana]                     |         |
-| [Memcached]   | 1.5                | `memcached`     | [wodby/memcached]                  |         |
-| [AthenaPDF]   | 2.10.0             | `athenapdf`     | [arachnysdocker/athenapdf-service] |         |
-| [Webgrind]    | 1.5                | `webgrind`      | [wodby/webgrind]                   |         |
-| [Blackfire]   | latest             | `blackfire`     | [blackfire/blackfire]              |         |
-| [Mailhog]     | latest             | `mailhog`       | [mailhog/mailhog]                  | ✓       |
-| [OpenSMTPD]   | 6.0                | `opensmtpd`     | [wodby/opensmtpd]                  |         |
-| [Rsyslog]     | latest             | `rsyslog`       | [wodby/rsyslog]                    |         |
-| Adminer       | 4.6                | `pma`           | [wodby/adminer]                    |         |
-| phpMyAdmin    | latest             | `pma`           | [phpmyadmin/phpmyadmin]            |         |
-| Portainer     | latest             | `portainer`     | [portainer/portainer]              | ✓       |
-| Traefik       | latest             | `traefik`       | [_/traefik]                        | ✓       |
+| Container       | Versions           | Service name    | Image                              | Default |
+| -------------   | ------------------ | ------------    | ---------------------------------- | ------- |
+| [Nginx]         | 1.15, 1.14         | `nginx`         | [wodby/nginx]                      | ✓       |
+| [Apache]        | 2.4                | `apache`        | [wodby/apache]                     |         |
+| [WordPress]     | 4                  | `php`           | [wodby/wordpress]                  | ✓       |
+| [PHP]           | 7.x, 5.6           | `php`           | [wodby/wordpress-php]              |         |
+| [MariaDB]       | 10.3, 10.2, 10.1   | `mariadb`       | [wodby/mariadb]                    | ✓       |
+| [PostgreSQL]    | 10, 9.x            | `postgres`      | [wodby/postgres]                   |         |
+| [Redis]         | 4.0, 3.2           | `redis`         | [wodby/redis]                      |         |
+| [Varnish]       | 4.1                | `varnish`       | [wodby/varnish]                    |         |
+| [Node.js]       | 10.9, 8.11, 6.14   | `node`          | [wodby/node]                       |         |
+| [Solr]          | 7.x, 6.6, 5.5      | `solr`          | [wodby/solr]                       |         |
+| [Elasticsearch] | 6.x, 5.6, 5.5, 5.4 | `elasticsearch` | [wodby/elasticsearch]              |         |
+| [Kibana]        | 6.x, 5.6, 5.5, 5.4 | `kibana`        | [wodby/kibana]                     |         |
+| [Memcached]     | 1.5                | `memcached`     | [wodby/memcached]                  |         |
+| [AthenaPDF]     | 2.10.0             | `athenapdf`     | [arachnysdocker/athenapdf-service] |         |
+| [Webgrind]      | 1.5                | `webgrind`      | [wodby/webgrind]                   |         |
+| [Blackfire]     | latest             | `blackfire`     | [blackfire/blackfire]              |         |
+| [Mailhog]       | latest             | `mailhog`       | [mailhog/mailhog]                  | ✓       |
+| [OpenSMTPD]     | 6.0                | `opensmtpd`     | [wodby/opensmtpd]                  |         |
+| [Rsyslog]       | latest             | `rsyslog`       | [wodby/rsyslog]                    |         |
+| Adminer         | 4.6                | `pma`           | [wodby/adminer]                    |         |
+| phpMyAdmin      | latest             | `pma`           | [phpmyadmin/phpmyadmin]            |         |
+| Portainer       | latest             | `portainer`     | [portainer/portainer]              | ✓       |
+| Traefik         | latest             | `traefik`       | [_/traefik]                        | ✓       |
 
 Supported WordPress versions: 4
 
@@ -58,23 +58,25 @@ We regularly update images used in this stack and release them together, see [re
 
 This project is licensed under the MIT open source license.
 
-[Apache]: https://wodby.com/stacks/wordpress/docs/containers/apache
-[AthenaPDF]: https://wodby.com/stacks/wordpress/docs/containers/athenapdf
-[Blackfire]: https://wodby.com/stacks/wordpress/docs/containers/blackfire
-[Mailhog]: https://wodby.com/stacks/wordpress/docs/containers/mailhog
-[MariaDB]: https://wodby.com/stacks/wordpress/docs/containers/mariadb
-[Memcached]: https://wodby.com/stacks/wordpress/docs/containers/memcached
-[Nginx]: https://wodby.com/stacks/wordpress/docs/containers/nginx
-[Node.js]: https://wodby.com/stacks/wordpress/docs/containers/node
-[OpenSMTPD]: https://wodby.com/stacks/wordpress/docs/containers/opensmtpd
-[PHP]: https://wodby.com/stacks/wordpress/docs/containers/php
-[PostgreSQL]: https://wodby.com/stacks/wordpress/docs/containers/postgres
-[Redis]: https://wodby.com/stacks/wordpress/docs/containers/redis
-[Rsyslog]: https://wodby.com/stacks/wordpress/docs/containers/rsyslog
-[Solr]: https://wodby.com/stacks/wordpress/docs/containers/solr
-[Varnish]: https://wodby.com/stacks/wordpress/docs/containers/varnish
-[Webgrind]: https://wodby.com/stacks/wordpress/docs/containers/webgrind
-[Wordpress]: https://wodby.com/stacks/wordpress/docs/containers/php
+[Apache]: https://wodby.com/docs/stacks/wordpress/containers#apache
+[AthenaPDF]: https://wodby.com/docs/stacks/wordpress/containers#athenapdf
+[Blackfire]: https://wodby.com/docs/stacks/wordpress/containers#blackfire
+[Elasticsearch]: https://wodby.com/docs/stacks/wordpress/containers#elasticsearch
+[Kibana]: https://wodby.com/docs/stacks/wordpress/containers#elasticsearch
+[Mailhog]: https://wodby.com/docs/stacks/wordpress/containers#mailhog
+[MariaDB]: https://wodby.com/docs/stacks/wordpress/containers#mariadb
+[Memcached]: https://wodby.com/docs/stacks/wordpress/containers#memcached
+[Nginx]: https://wodby.com/docs/stacks/wordpress/containers#nginx
+[Node.js]: https://wodby.com/docs/stacks/wordpress/containers#nodejs
+[OpenSMTPD]: https://wodby.com/docs/stacks/wordpress/containers#opensmtpd
+[PHP]: https://wodby.com/docs/stacks/wordpress/containers#php
+[PostgreSQL]: https://wodby.com/docs/stacks/wordpress/containers#postgres
+[Redis]: https://wodby.com/docs/stacks/wordpress/containers#redis
+[Rsyslog]: https://wodby.com/docs/stacks/wordpress/containers#rsyslog
+[Solr]: https://wodby.com/docs/stacks/wordpress/containers#solr
+[Varnish]: https://wodby.com/docs/stacks/wordpress/containers#varnish
+[Webgrind]: https://wodby.com/docs/stacks/wordpress/containers#webgrind
+[Wordpress]: https://wodby.com/docs/stacks/wordpress/containers#php
 
 [_/traefik]: https://hub.docker.com/_/traefik
 [arachnysdocker/athenapdf-service]: https://hub.docker.com/r/arachnysdocker/athenapdf-service
