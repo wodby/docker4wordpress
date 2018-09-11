@@ -70,7 +70,7 @@ This project is licensed under the MIT open source license.
 [Node.js]: https://wodby.com/docs/stacks/wordpress/containers#nodejs
 [OpenSMTPD]: https://wodby.com/docs/stacks/wordpress/containers#opensmtpd
 [PHP]: https://wodby.com/docs/stacks/wordpress/containers#php
-[PostgreSQL]: https://wodby.com/docs/stacks/wordpress/containers#postgres
+[PostgreSQL]: https://wodby.com/docs/stacks/wordpress/containers#postgresql
 [Redis]: https://wodby.com/docs/stacks/wordpress/containers#redis
 [Rsyslog]: https://wodby.com/docs/stacks/wordpress/containers#rsyslog
 [Solr]: https://wodby.com/docs/stacks/wordpress/containers#solr
