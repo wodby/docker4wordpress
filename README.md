@@ -61,8 +61,8 @@ This project is licensed under the MIT open source license.
 [Apache]: https://wodby.com/docs/stacks/wordpress/containers#apache
 [AthenaPDF]: https://wodby.com/docs/stacks/wordpress/containers#athenapdf
 [Blackfire]: https://wodby.com/docs/stacks/wordpress/containers#blackfire
-[Elasticsearch]: https://wodby.com/docs/stacks/wordpress/containers#elasticsearch
-[Kibana]: https://wodby.com/docs/stacks/wordpress/containers#elasticsearch
+[Elasticsearch]: https://wodby.com/docs/stacks/elasticsearch
+[Kibana]: https://wodby.com/docs/stacks/elasticsearch
 [Mailhog]: https://wodby.com/docs/stacks/wordpress/containers#mailhog
 [MariaDB]: https://wodby.com/docs/stacks/wordpress/containers#mariadb
 [Memcached]: https://wodby.com/docs/stacks/wordpress/containers#memcached
@@ -73,7 +73,7 @@ This project is licensed under the MIT open source license.
 [PostgreSQL]: https://wodby.com/docs/stacks/wordpress/containers#postgresql
 [Redis]: https://wodby.com/docs/stacks/wordpress/containers#redis
 [Rsyslog]: https://wodby.com/docs/stacks/wordpress/containers#rsyslog
-[Solr]: https://wodby.com/docs/stacks/wordpress/containers#solr
+[Solr]: https://wodby.com/docs/stacks/solr
 [Varnish]: https://wodby.com/docs/stacks/wordpress/containers#varnish
 [Webgrind]: https://wodby.com/docs/stacks/wordpress/containers#webgrind
 [Wordpress]: https://wodby.com/docs/stacks/wordpress/containers#php
