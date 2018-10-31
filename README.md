@@ -55,6 +55,12 @@ Docker4WordPress is a project designed to help you spin up local environment wit
 
 We regularly update images used in this stack and release them together, see [releases page](https://github.com/wodby/docker4wordpress/releases) for full changelog and update instructions.  
 
+## Other Docker4x projects
+
+* [docker4php](https://github.com/wodby/docker4php)
+* [docker4drupal](https://github.com/wodby/docker4drupal)
+* [docker4ruby](https://github.com/wodby/docker4ruby)
+
 ## License
 
 This project is licensed under the MIT open source license.
