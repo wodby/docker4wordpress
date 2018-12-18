@@ -10,7 +10,7 @@ services:
       MYSQL_PASSWORD: $DB_PASSWORD
 
   php:
-    image: wodby/wordpress:4-$PHP_VER-$WORDPRESS_STABILITY_TAG
+    image: wodby/wordpress:5-$PHP_VER-$WORDPRESS_STABILITY_TAG
     environment:
       DB_HOST: $DB_HOST
       DB_NAME: $DB_NAME

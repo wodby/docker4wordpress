@@ -18,7 +18,7 @@ The WordPress stack consist of the following containers:
 | -------------   | ------------------ | ------------    | ---------------------------------- | ------- |
 | [Nginx]         | 1.15, 1.14         | `nginx`         | [wodby/nginx]                      | ✓       |
 | [Apache]        | 2.4                | `apache`        | [wodby/apache]                     |         |
-| [WordPress]     | 4                  | `php`           | [wodby/wordpress]                  | ✓       |
+| [WordPress]     | 5                  | `php`           | [wodby/wordpress]                  | ✓       |
 | [PHP]           | 7.2, 7.1, 5.6      | `php`           | [wodby/wordpress-php]              |         |
 | [MariaDB]       | 10.3, 10.2, 10.1   | `mariadb`       | [wodby/mariadb]                    | ✓       |
 | [PostgreSQL]    | 11, 10, 9.x        | `postgres`      | [wodby/postgres]                   |         |
@@ -41,7 +41,7 @@ The WordPress stack consist of the following containers:
 | Portainer       | latest             | `portainer`     | [portainer/portainer]              | ✓       |
 | Traefik         | latest             | `traefik`       | [_/traefik]                        | ✓       |
 
-Supported WordPress versions: 4
+Supported WordPress versions: 5
 
 ## Documentation
 
