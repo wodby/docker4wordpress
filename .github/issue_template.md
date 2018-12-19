@@ -10,6 +10,7 @@ e.g. macOS Sierra
 ```
 
 ### Docker compose file
+Make sure you remove all commented services.
 ```yml
 # Content of your docker-compose.yml file. Make sure you remove all sensible information you might have there.
 ```
