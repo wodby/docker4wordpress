@@ -20,6 +20,8 @@ services:
       WP_VERSION: 4
       PHP_SENDMAIL_PATH: '/bin/true'
       BASE_URL: http://$PROJECT_BASE_URL
+      PHP_FPM_USER: wodby
+      PHP_FPM_GROUP: wodby
     volumes:
       - codebase:/var/www/html/
       - ./tests.sh:/usr/local/bin/tests.sh
