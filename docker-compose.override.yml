@@ -12,5 +12,5 @@ services:
     volumes:
       - codebase:/var/www/html
 
-volumes:
+volumes: caoidjfoaisdjofisj
   codebase:
