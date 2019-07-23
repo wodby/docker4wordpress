@@ -26,7 +26,7 @@ The WordPress stack consist of the following containers:
 | [Memcached]     | 1                       | `memcached`     | [wodby/memcached]                  |         |
 | [Varnish]       | 6.0, 4.1                | `varnish`       | [wodby/varnish]                    |         |
 | [Node.js]       | 12, 10, 8               | `node`          | [wodby/node]                       |         |
-| [Solr]          | 7.7, 7.6, 7.5, 6.6, 5.5 | `solr`          | [wodby/solr]                       |         |
+| [Solr]          | 8, 7, 6, 5              | `solr`          | [wodby/solr]                       |         |
 | [Elasticsearch] | 7, 6                    | `elasticsearch` | [wodby/elasticsearch]              |         |
 | [Kibana]        | 7, 6                    | `kibana`        | [wodby/kibana]                     |         |
 | [AthenaPDF]     | 2.10.0                  | `athenapdf`     | [arachnysdocker/athenapdf-service] |         |
