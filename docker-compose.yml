@@ -25,7 +25,7 @@ services:
       DB_NAME: $DB_NAME
       PHP_FPM_USER: wodby
       PHP_FPM_GROUP: wodby
-## Read instructions at https://wodby.com/stacks/wordpress/docs/local/xdebug/
+## Read instructions at https://wodby.com/docs/stacks/wordpress/local#xdebug
 #      PHP_XDEBUG: 1
 #      PHP_XDEBUG_DEFAULT_ENABLE: 1
 #      PHP_XDEBUG_REMOTE_CONNECT_BACK: 0
@@ -36,7 +36,7 @@ services:
 #      PHP_XDEBUG_REMOTE_HOST: 10.0.75.1 # Windows
     volumes:
       - ./:/var/www/html
-## For macOS users (https://wodby.com/stacks/wordpress/docs/local/docker-for-mac/)
+## For macOS users (https://wodby.com/docs/stacks/wordpress/local#docker-for-mac)
 #      - ./:/var/www/html:cached # User-guided caching
 #      - docker-sync:/var/www/html # Docker-sync
 ## For XHProf and Xdebug profiler traces
@@ -55,7 +55,7 @@ services:
       #NGINX_SERVER_ROOT: /var/www/html/subdir
     volumes:
       - ./:/var/www/html
-# Options for macOS users (https://wodby.com/stacks/wordpress/docs/local/docker-for-mac/)
+# Options for macOS users (https://wodby.com/docs/stacks/wordpress/local#docker-for-mac)
 #      - ./:/var/www/html:cached # User-guided caching
 #      - docker-sync:/var/www/html # Docker-sync
     labels:
@@ -94,7 +94,7 @@ services:
 #      APACHE_VHOST_PRESET: php
 #    volumes:
 #      - ./:/var/www/html
-## For macOS users (https://wodby.com/stacks/wordpress/docs/local/docker-for-mac/)
+## For macOS users (https://wodby.com/docs/stacks/wordpress/local#docker-for-mac)
 ##      - ./:/var/www/html:cached # User-guided caching
 ##      - docker-sync:/var/www/html # Docker-sync
 #    labels:
