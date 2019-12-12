@@ -133,7 +133,8 @@ services:
 #    environment:
 #      WEBGRIND_PROFILER_DIR: /mnt/files/xdebug/profiler
 #    labels:
-#      - "traefik.http.routers.${PROJECT_NAME}_webgrind.rule=Host(`webgrind.${PROJECT_BASE_URL}`)"#    volumes:
+#      - "traefik.http.routers.${PROJECT_NAME}_webgrind.rule=Host(`webgrind.${PROJECT_BASE_URL}`)"
+#    volumes:
 #      - files:/mnt/files
 
 #  pma:
