@@ -34,7 +34,7 @@ The WordPress stack consist of the following containers:
 | [OpenSMTPD]     | 6.0                     | `opensmtpd`     | [wodby/opensmtpd]                  |         |
 | [Rsyslog]       | latest                  | `rsyslog`       | [wodby/rsyslog]                    |         |
 | [Blackfire]     | latest                  | `blackfire`     | [blackfire/blackfire]              |         |
-| [Webgrind]      | 1.5                     | `webgrind`      | [wodby/webgrind]                   |         |
+| [Webgrind]      | 1.6                     | `webgrind`      | [wodby/webgrind]                   |         |
 | [XHProf viewer] | latest                  | `xhprof`        | [wodby/xhprof]                     |         |
 | Adminer         | 4.6                     | `pma`           | [wodby/adminer]                    |         |
 | phpMyAdmin      | latest                  | `pma`           | [phpmyadmin/phpmyadmin]            |         |
