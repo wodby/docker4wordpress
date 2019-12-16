@@ -19,7 +19,7 @@ The WordPress stack consist of the following containers:
 | [Nginx]         | 1.17, 1.16              | `nginx`         | [wodby/nginx]                      | ✓       |
 | [Apache]        | 2.4                     | `apache`        | [wodby/apache]                     |         |
 | [WordPress]     | 5                       | `php`           | [wodby/wordpress]                  | ✓       |
-| [PHP]           | 7.3, 7.2, 7.1, 5.6      | `php`           | [wodby/wordpress-php]              |         |
+| [PHP]           | 7.4, 7.3, 7.2, 7.1, 5.6 | `php`           | [wodby/wordpress-php]              |         |
 | [MariaDB]       | 10.4, 10.3, 10.2, 10.1  | `mariadb`       | [wodby/mariadb]                    | ✓       |
 | [PostgreSQL]    | 12, 11, 10, 9.x         | `postgres`      | [wodby/postgres]                   |         |
 | [Redis]         | 5, 4                    | `redis`         | [wodby/redis]                      |         |
@@ -43,7 +43,7 @@ The WordPress stack consist of the following containers:
 
 Supported WordPress versions: 5
 
-❗️PHP 5.6 [has reached end of life](http://php.net/supported-versions.php) and no longer supported by PHP team. PHP 7.1 is currently in security fix only mode. We strongly advise you to migrate to the latest stable PHP version.   
+❗️PHP 7.1 and 5.6 [have reached end of life](http://php.net/supported-versions.php) and no longer supported by PHP team. PHP 7.1 is currently in security fix only mode. We strongly advise you to migrate to the latest stable PHP version.   
 
 ## Documentation
 
