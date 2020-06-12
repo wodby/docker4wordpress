@@ -11,8 +11,8 @@ services:
       MYSQL_USER: $DB_USER
       MYSQL_PASSWORD: $DB_PASSWORD
 #    volumes:
-#      - ./mariadb-init:/docker-entrypoint-initdb.d # Place init .sql file(s) here.
-#      - /path/to/mariadb/data/on/host:/var/lib/mysql # I want to manage volumes manually.
+#    - ./mariadb-init:/docker-entrypoint-initdb.d # Place init .sql file(s) here.
+#    - /path/to/mariadb/data/on/host:/var/lib/mysql # I want to manage volumes manually.
 
   php:
     image: wodby/wordpress-php:$PHP_TAG
@@ -25,7 +25,7 @@ services:
       DB_NAME: $DB_NAME
       PHP_FPM_USER: wodby
       PHP_FPM_GROUP: wodby
-## Read instructions at https://wodby.com/docs/stacks/wordpress/local#xdebug
+#      # Read instructions at https://wodby.com/docs/stacks/wordpress/local#xdebug
 #      PHP_XDEBUG: 1
 #      PHP_XDEBUG_DEFAULT_ENABLE: 1
 #      PHP_XDEBUG_REMOTE_CONNECT_BACK: 0
@@ -35,17 +35,26 @@ services:
 #      PHP_XDEBUG_REMOTE_HOST: 10.254.254.254 # macOS
 #      PHP_XDEBUG_REMOTE_HOST: 10.0.75.1 # Windows
     volumes:
-      - ./:/var/www/html:cached
-## Alternative for macOS users: docker-sync https://wodby.com/docs/stacks/drupal/local#docker-for-mac
-#      - docker-sync:/var/www/html
-## For XHProf and Xdebug profiler traces
-#      - files:/mnt/files
+    - ./:/var/www/html:cached
+#    # Alternative for macOS users: docker-sync https://wodby.com/docs/stacks/drupal/local#docker-for-mac
+#    - docker-sync:/var/www/html
+#    # For XHProf and Xdebug profiler traces
+#    - files:/mnt/files
+
+  crond:
+    image: wodby/wordpress-php:$PHP_TAG
+    container_name: "${PROJECT_NAME}_crond"
+    environment:
+      CRONTAB: "0 * * * * wp cron event run --due-now --path=/var/www/html/web"
+    command: sudo -E LD_PRELOAD=/usr/lib/preloadable_libiconv.so crond -f -d 0
+    volumes:
+    - ./:/var/www/html:cached
 
   nginx:
     image: wodby/nginx:$NGINX_TAG
     container_name: "${PROJECT_NAME}_nginx"
     depends_on:
-      - php
+    - php
     environment:
       NGINX_STATIC_OPEN_FILE_CACHE: "off"
       NGINX_ERROR_LOG_LEVEL: debug
@@ -53,9 +62,9 @@ services:
       NGINX_VHOST_PRESET: wordpress
       #NGINX_SERVER_ROOT: /var/www/html/subdir
     volumes:
-      - ./:/var/www/html:cached
-## Alternative for macOS users: docker-sync https://wodby.com/docs/stacks/drupal/local#docker-for-mac
-#      - docker-sync:/var/www/html
+    - ./:/var/www/html:cached
+#    # Alternative for macOS users: docker-sync https://wodby.com/docs/stacks/drupal/local#docker-for-mac
+#    - docker-sync:/var/www/html
     labels:
     - "traefik.http.routers.${PROJECT_NAME}_nginx.rule=Host(`${PROJECT_BASE_URL}`)"
 
@@ -75,30 +84,30 @@ services:
 #      POSTGRES_DB: $DB_NAME
 #      POSTGRES_USER: $DB_USER
 #    volumes:
-#      - ./postgres-init:/docker-entrypoint-initdb.d # Place init file(s) here.
-#      - /path/to/postgres/data/on/host:/var/lib/postgresql/data # I want to manage volumes manually.
+#    - ./postgres-init:/docker-entrypoint-initdb.d # Place init file(s) here.
+#    - /path/to/postgres/data/on/host:/var/lib/postgresql/data # I want to manage volumes manually.
 
 #  apache:
 #    image: wodby/apache:$APACHE_TAG
 #    container_name: "${PROJECT_NAME}_apache"
 #    depends_on:
-#      - php
+#    - php
 #    environment:
 #      APACHE_LOG_LEVEL: debug
 #      APACHE_BACKEND_HOST: php
 #      APACHE_VHOST_PRESET: php
 #    volumes:
-#      - ./:/var/www/html:cached
-## Alternative for macOS users: docker-sync https://wodby.com/docs/stacks/drupal/local#docker-for-mac
-#      - docker-sync:/var/www/html
+#    - ./:/var/www/html:cached
+##    # Alternative for macOS users: docker-sync https://wodby.com/docs/stacks/drupal/local#docker-for-mac
+##    - docker-sync:/var/www/html
 #    labels:
-#      - "traefik.http.routers.${PROJECT_NAME}_apache.rule=Host(`${PROJECT_BASE_URL}`)"
+#    - "traefik.http.routers.${PROJECT_NAME}_apache.rule=Host(`${PROJECT_BASE_URL}`)"
 
 #  varnish:
 #    image: wodby/varnish:$VARNISH_TAG
 #    container_name: "${PROJECT_NAME}_varnish"
 #    depends_on:
-#      - nginx
+#    - nginx
 #    environment:
 #      VARNISH_SECRET: secret
 #      VARNISH_BACKEND_HOST: nginx
@@ -106,8 +115,8 @@ services:
 #      VARNISH_CONFIG_PRESET: wordpress
 #      VARNISH_ALLOW_UNRESTRICTED_PURGE: 1
 #    labels:
-#      - "traefik.http.services.${PROJECT_NAME}_varnish.loadbalancer.server.port=6081"
-#      - "traefik.http.routers.${PROJECT_NAME}_varnish.rule=Host(`varnish.${PROJECT_BASE_URL}`)"
+#    - "traefik.http.services.${PROJECT_NAME}_varnish.loadbalancer.server.port=6081"
+#    - "traefik.http.routers.${PROJECT_NAME}_varnish.rule=Host(`varnish.${PROJECT_BASE_URL}`)"
 
 #  redis:
 #    container_name: "${PROJECT_NAME}_redis"
@@ -117,12 +126,12 @@ services:
 #    container_name: "${PROJECT_NAME}_adminer"
 #    image: wodby/adminer:$ADMINER_TAG
 #    environment:
-## For PostgreSQL:
+##      # For PostgreSQL:
 ##      ADMINER_DEFAULT_DB_DRIVER: pgsql
 #      ADMINER_DEFAULT_DB_HOST: $DB_HOST
 #      ADMINER_DEFAULT_DB_NAME: $DB_NAME
 #    labels:
-#      - "traefik.http.routers.${PROJECT_NAME}_adminer.rule=Host(`adminer.${PROJECT_BASE_URL}`)"
+#    - "traefik.http.routers.${PROJECT_NAME}_adminer.rule=Host(`adminer.${PROJECT_BASE_URL}`)"
 
 #  webgrind:
 #    image: wodby/webgrind:$WEBGRIND_TAG
@@ -130,9 +139,9 @@ services:
 #    environment:
 #      WEBGRIND_PROFILER_DIR: /mnt/files/xdebug/profiler
 #    labels:
-#      - "traefik.http.routers.${PROJECT_NAME}_webgrind.rule=Host(`webgrind.${PROJECT_BASE_URL}`)"
+#    - "traefik.http.routers.${PROJECT_NAME}_webgrind.rule=Host(`webgrind.${PROJECT_BASE_URL}`)"
 #    volumes:
-#      - files:/mnt/files
+#    - files:/mnt/files
 
 #  pma:
 #    image: phpmyadmin/phpmyadmin
@@ -144,7 +153,7 @@ services:
 #      PHP_UPLOAD_MAX_FILESIZE: 1G
 #      PHP_MAX_INPUT_VARS: 1G
 #    labels:
-#      - "traefik.http.routers.${PROJECT_NAME}_pma.rule=Host(`pma.${PROJECT_BASE_URL}`)"
+#    - "traefik.http.routers.${PROJECT_NAME}_pma.rule=Host(`pma.${PROJECT_BASE_URL}`)"
 
 #  athenapdf:
 #    image: arachnysdocker/athenapdf-service:$ATHENAPDF_TAG
@@ -170,7 +179,8 @@ services:
 #    environment:
 #      SOLR_HEAP: 1024m
 #    labels:
-#      - "traefik.http.routers.${PROJECT_NAME}_solr.rule=Host(`solr.${PROJECT_BASE_URL}`)"
+#    - "traefik.http.services.${PROJECT_NAME}_solr.loadbalancer.server.port=8983"
+#    - "traefik.http.routers.${PROJECT_NAME}_solr.rule=Host(`solr.${PROJECT_BASE_URL}`)"
 
 #  elasticsearch:
 #    image: wodby/elasticsearch:$ELASTICSEARCH_TAG
@@ -184,22 +194,22 @@ services:
 #  kibana:
 #    image: wodby/kibana:$KIBANA_TAG
 #    depends_on:
-#      - elasticsearch
+#    - elasticsearch
 #    labels:
-#      - "traefik.http.services.${PROJECT_NAME}_kibana.loadbalancer.server.port=5601"
-#      - "traefik.http.routers.${PROJECT_NAME}_kibana.rule=Host(`kibana.${PROJECT_BASE_URL}`)"
+#    - "traefik.http.services.${PROJECT_NAME}_kibana.loadbalancer.server.port=5601"
+#    - "traefik.http.routers.${PROJECT_NAME}_kibana.rule=Host(`kibana.${PROJECT_BASE_URL}`)"
 
 #  node:
 #    image: wodby/node:$NODE_TAG
 #    container_name: "${PROJECT_NAME}_node"
 #    working_dir: /app
 #    labels:
-#      - "traefik.http.services.${PROJECT_NAME}_node.loadbalancer.server.port=3000"
-#      - "traefik.http.routers.${PROJECT_NAME}_node.rule=Host(`node.${PROJECT_BASE_URL}`)"
+#    - "traefik.http.services.${PROJECT_NAME}_node.loadbalancer.server.port=3000"
+#    - "traefik.http.routers.${PROJECT_NAME}_node.rule=Host(`node.${PROJECT_BASE_URL}`)"
 #    expose:
-#      - "3000"
+#    - "3000"
 #    volumes:
-#      - ./path/to/your/single-page-app:/app
+#    - ./path/to/your/single-page-app:/app
 #    command: sh -c 'npm install && npm run start'
 
 #  memcached:
@@ -218,16 +228,16 @@ services:
 #    image: wodby/xhprof:$XHPROF_TAG
 #    restart: always
 #    volumes:
-#      - files:/mnt/files
+#    - files:/mnt/files
 #    labels:
-#      - "traefik.http.routers.${PROJECT_NAME}_xhprof.rule=Host(`xhprof.${PROJECT_BASE_URL}`)"
+#    - "traefik.http.routers.${PROJECT_NAME}_xhprof.rule=Host(`xhprof.${PROJECT_BASE_URL}`)"
 
   portainer:
     image: portainer/portainer
     container_name: "${PROJECT_NAME}_portainer"
     command: --no-auth -H unix:///var/run/docker.sock
     volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
+    - /var/run/docker.sock:/var/run/docker.sock
     labels:
     - "traefik.http.routers.${PROJECT_NAME}_portainer.rule=Host(`portainer.${PROJECT_BASE_URL}`)"
 
@@ -236,10 +246,10 @@ services:
     container_name: "${PROJECT_NAME}_traefik"
     command: --api.insecure=true --providers.docker
     ports:
-      - '8000:80'
-#      - '8080:8080' # Dashboard
+    - '8000:80'
+#    - '8080:8080' # Dashboard
     volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
+    - /var/run/docker.sock:/var/run/docker.sock
 
 #volumes:
 ## Docker-sync for macOS users
