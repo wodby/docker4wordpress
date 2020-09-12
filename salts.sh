@@ -17,7 +17,6 @@ function get_salt {
 
 while [ $(grep -i -c "generateme" .env) -gt 0 ]; do
   get_salt
-  echo $salts
   if [[ $salts == *'&'* ]]; then
     echo 'HAS &'
     continue
@@ -26,7 +25,8 @@ while [ $(grep -i -c "generateme" .env) -gt 0 ]; do
     echo 'HAS \'
     continue
   fi
-  # sed -z -i "0,/generateme/s//$salts/" .env
   awk -v s=$salts 'NR==1,/generateme/{sub(/generateme/, s)} 1' .env > .env.temp
   mv .env.temp .env
 done
+
+echo "Salts Generated"
