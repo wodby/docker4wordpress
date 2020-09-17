@@ -1,6 +1,6 @@
 include .env
 
-.PHONY: up down stop prune ps shell wp logs
+.PHONY: up down stop prune ps shell wp logs mutagen
 
 default: up
 
@@ -16,7 +16,6 @@ up:
 	docker-compose pull
 	docker-compose up -d --remove-orphans
 
-.PHONE: mutagen
 mutagen:
 	docker-compose up -d mutagen
 	mutagen project start -f mutagen/config.yml
