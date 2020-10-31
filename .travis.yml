@@ -1,20 +1,24 @@
 language: bash
 
+#Service name
 services:
 - docker
 
+#Environment
 env:
   matrix:
   - PHP_VER=7.4
   - PHP_VER=7.3
   - PHP_VER=7.2 GITHUB_RELEASE=1
 
+#Script
 script:
 - set -e
 - make test
 - cp docker.mk Makefile
 - tar -czf docker4wordpress.tar.gz docker-compose.yml docker-compose.override.yml mutagen Makefile .env traefik.yml
 
+#Step for deploy
 deploy:
   provider: releases
   api_key: $GITHUB_ACCESS_TOKEN
