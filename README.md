@@ -1,6 +1,6 @@
 # Docker-based WordPress Stack
 
-[![Build Status](https://travis-ci.org/wodby/docker4wordpress.svg?branch=master)](https://travis-ci.org/wodby/docker4wordpress)
+[![Build Status](https://github.com/wodby/docker4wordpress/workflows/Run%20tests/badge.svg)](https://github.com/wodby/docker4wordpress/actions)
 
 ## Introduction
 
