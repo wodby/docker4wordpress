@@ -30,7 +30,7 @@ The WordPress stack consist of the following containers:
 | [Solr]          | 8, 7, 6, 5              | `solr`          | [wodby/solr]                       |         |
 | [Elasticsearch] | 7, 6                    | `elasticsearch` | [wodby/elasticsearch]              |         |
 | [Kibana]        | 7, 6                    | `kibana`        | [wodby/kibana]                     |         |
-| [AthenaPDF]     | 2.10.0                  | `athenapdf`     | [arachnysdocker/athenapdf-service] |         |
+| [AthenaPDF]     | 2.16.0                  | `athenapdf`     | [arachnysdocker/athenapdf-service] |         |
 | [Mailhog]       | latest                  | `mailhog`       | [mailhog/mailhog]                  | ✓       |
 | [OpenSMTPD]     | 6.0                     | `opensmtpd`     | [wodby/opensmtpd]                  |         |
 | [Rsyslog]       | latest                  | `rsyslog`       | [wodby/rsyslog]                    |         |
