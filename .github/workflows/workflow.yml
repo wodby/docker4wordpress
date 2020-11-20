@@ -38,4 +38,3 @@ jobs:
         file: docker4wordpress.tar.gz
         overwrite: true
         tags: true
-        draft: true
