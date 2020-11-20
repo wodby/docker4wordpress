@@ -17,7 +17,7 @@ services:
       DB_USER: $DB_USER
       DB_PASSWORD: $DB_PASSWORD
       DEBUG: 1
-      WP_VERSION: 4
+      WP_VERSION: 5
       PHP_SENDMAIL_PATH: '/bin/true'
       BASE_URL: http://$PROJECT_BASE_URL
       PHP_FPM_USER: wodby
