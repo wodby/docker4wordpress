@@ -39,8 +39,7 @@ The WordPress stack consist of the following containers:
 | [XHProf viewer] | latest                  | [wodby/xhprof]                     |               |         |
 | Adminer         | 4.6                     | [wodby/adminer]                    |               |         |
 | phpMyAdmin      | latest                  | [phpmyadmin/phpmyadmin]            |               |         |
-| Portainer       | latest                  | [portainer/portainer]              |               | ✓       |
-| Traefik         | latest                  | [_/traefik]                        |               | ✓       |
+| Traefik         | latest                  | [_/traefik]                        | ✓             | ✓       |
                                                                                                  
 ## Documentation                                                                                 
 
@@ -101,7 +100,6 @@ This project is licensed under the MIT open source license.
 [blackfire/blackfire]: https://hub.docker.com/r/blackfire/blackfire
 [mailhog/mailhog]: https://hub.docker.com/r/mailhog/mailhog
 [phpmyadmin/phpmyadmin]: https://hub.docker.com/r/phpmyadmin/phpmyadmin
-[portainer/portainer]: https://hub.docker.com/r/portainer/portainer
 [wodby/adminer]: https://github.com/wodby/adminer
 [wodby/apache]: https://github.com/wodby/apache
 [wodby/elasticsearch]: https://github.com/wodby/elasticsearch
