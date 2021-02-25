@@ -14,35 +14,35 @@ Docker4WordPress is a set of docker images optimized for WordPress. Use docker-c
 
 The WordPress stack consist of the following containers:
 
-| Container       | Versions                | Service name    | Image                              | Default |
-| -------------   | ----------------------- | ------------    | ---------------------------------- | ------- |
-| [Nginx]         | 1.19, 1.18              | `nginx`         | [wodby/nginx]                      | ✓       |
-| [Apache]        | 2.4                     | `apache`        | [wodby/apache]                     |         |
-| [WordPress]     | 5                       | `php`           | [wodby/wordpress]                  | ✓       |
-| [PHP]           | 8.0, 7.4, 7.3           | `php`           | [wodby/wordpress-php]              |         |
-| Crond           |                         | `crond`         | [wodby/wordpress-php]              | ✓       |
-| [MariaDB]       | 10.5, 10.4, 10.3, 10.2  | `mariadb`       | [wodby/mariadb]                    | ✓       |
-| [PostgreSQL]    | 13, 12, 11, 10, 9.6     | `postgres`      | [wodby/postgres]                   |         |
-| [Redis]         | 6, 5                    | `redis`         | [wodby/redis]                      |         |
-| [Memcached]     | 1                       | `memcached`     | [wodby/memcached]                  |         |
-| [Varnish]       | 6.0, 4.1                | `varnish`       | [wodby/varnish]                    |         |
-| [Node.js]       | 14, 12, 10              | `node`          | [wodby/node]                       |         |
-| [Solr]          | 8, 7, 6, 5              | `solr`          | [wodby/solr]                       |         |
-| [Elasticsearch] | 7, 6                    | `elasticsearch` | [wodby/elasticsearch]              |         |
-| [Kibana]        | 7, 6                    | `kibana`        | [wodby/kibana]                     |         |
-| [AthenaPDF]     | 2.16.0                  | `athenapdf`     | [arachnysdocker/athenapdf-service] |         |
-| [Mailhog]       | latest                  | `mailhog`       | [mailhog/mailhog]                  | ✓       |
-| [OpenSMTPD]     | 6.0                     | `opensmtpd`     | [wodby/opensmtpd]                  |         |
-| [Rsyslog]       | latest                  | `rsyslog`       | [wodby/rsyslog]                    |         |
-| [Blackfire]     | latest                  | `blackfire`     | [blackfire/blackfire]              |         |
-| [Webgrind]      | 1                       | `webgrind`      | [wodby/webgrind]                   |         |
-| [XHProf viewer] | latest                  | `xhprof`        | [wodby/xhprof]                     |         |
-| Adminer         | 4.6                     | `pma`           | [wodby/adminer]                    |         |
-| phpMyAdmin      | latest                  | `pma`           | [phpmyadmin/phpmyadmin]            |         |
-| Portainer       | latest                  | `portainer`     | [portainer/portainer]              | ✓       |
-| Traefik         | latest                  | `traefik`       | [_/traefik]                        | ✓       |
-
-## Documentation
+| Container       | Versions                | Image                              | ARM64 support | Enabled by default |
+| -------------   | ----------------------- | ---------------------------------- | ------------- | ------- |
+| [Nginx]         | 1.19, 1.18              | [wodby/nginx]                      | ✓             | ✓       |
+| [Apache]        | 2.4                     | [wodby/apache]                     | ✓             |         |
+| [WordPress]     | 5                       | [wodby/wordpress]                  | ✓             | ✓       |
+| [PHP]           | 8.0, 7.4, 7.3           | [wodby/wordpress-php]              | ✓             |         |
+| Crond           |                         | [wodby/wordpress-php]              | ✓             | ✓       |
+| [MariaDB]       | 10.5, 10.4, 10.3, 10.2  | [wodby/mariadb]                    | ✓             | ✓       |
+| [PostgreSQL]    | 13, 12, 11, 10, 9.6     | [wodby/postgres]                   | ✓             |         |
+| [Redis]         | 6, 5                    | [wodby/redis]                      | ✓             |         |
+| [Memcached]     | 1                       | [wodby/memcached]                  |               |         |
+| [Varnish]       | 6.0, 4.1                | [wodby/varnish]                    |               |         |
+| [Node.js]       | 14, 12, 10              | [wodby/node]                       |               |         |
+| [Solr]          | 8, 7, 6, 5              | [wodby/solr]                       |               |         |
+| [Elasticsearch] | 7, 6                    | [wodby/elasticsearch]              |               |         |
+| [Kibana]        | 7, 6                    | [wodby/kibana]                     |               |         |
+| [AthenaPDF]     | 2.16.0                  | [arachnysdocker/athenapdf-service] |               |         |
+| [Mailhog]       | latest                  | [mailhog/mailhog]                  |               | ✓       |
+| [OpenSMTPD]     | 6.0                     | [wodby/opensmtpd]                  |               |         |
+| [Rsyslog]       | latest                  | [wodby/rsyslog]                    |               |         |
+| [Blackfire]     | latest                  | [blackfire/blackfire]              |               |         |
+| [Webgrind]      | 1                       | [wodby/webgrind]                   |               |         |
+| [XHProf viewer] | latest                  | [wodby/xhprof]                     |               |         |
+| Adminer         | 4.6                     | [wodby/adminer]                    |               |         |
+| phpMyAdmin      | latest                  | [phpmyadmin/phpmyadmin]            |               |         |
+| Portainer       | latest                  | [portainer/portainer]              |               | ✓       |
+| Traefik         | latest                  | [_/traefik]                        |               | ✓       |
+                                                                                                 
+## Documentation                                                                                 
 
 Full documentation is available at https://wodby.com/docs/stacks/wordpress/local.
 
