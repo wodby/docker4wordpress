@@ -17,8 +17,7 @@ up:
 	docker-compose up -d --remove-orphans
 
 mutagen:
-	docker-compose up -d mutagen
-	mutagen project start -f mutagen/config.yml
+	mutagen-compose up
 
 ## down	:	Stop containers.
 down: stop
