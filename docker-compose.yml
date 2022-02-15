@@ -77,18 +77,6 @@ services:
     - "traefik.http.services.${PROJECT_NAME}_mailhog.loadbalancer.server.port=8025"
     - "traefik.http.routers.${PROJECT_NAME}_mailhog.rule=Host(`mailhog.${PROJECT_BASE_URL}`)"
 
-#  postgres:
-#    image: wodby/postgres:$POSTGRES_TAG
-#    container_name: "${PROJECT_NAME}_postgres"
-#    stop_grace_period: 30s
-#    environment:
-#      POSTGRES_PASSWORD: $DB_PASSWORD
-#      POSTGRES_DB: $DB_NAME
-#      POSTGRES_USER: $DB_USER
-#    volumes:
-#    - ./postgres-init:/docker-entrypoint-initdb.d # Place init file(s) here.
-#    - /path/to/postgres/data/on/host:/var/lib/postgresql/data # I want to manage volumes manually.
-
 #  apache:
 #    image: wodby/apache:$APACHE_TAG
 #    container_name: "${PROJECT_NAME}_apache"
@@ -128,8 +116,6 @@ services:
 #    container_name: "${PROJECT_NAME}_adminer"
 #    image: wodby/adminer:$ADMINER_TAG
 #    environment:
-##      # For PostgreSQL:
-##      ADMINER_DEFAULT_DB_DRIVER: pgsql
 #      ADMINER_DEFAULT_DB_HOST: $DB_HOST
 #      ADMINER_DEFAULT_DB_NAME: $DB_NAME
 #    labels:

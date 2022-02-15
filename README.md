@@ -22,7 +22,6 @@ The WordPress stack consist of the following containers:
 | [PHP]           | 8.1, 8.0, 7.4           | [wodby/wordpress-php]              | ✓             |                    |
 | Crond           |                         | [wodby/wordpress-php]              | ✓             | ✓                  |
 | [MariaDB]       | 10.6, 10.5, 10.4, 10.3  | [wodby/mariadb]                    | ✓             | ✓                  |
-| [PostgreSQL]    | 14, 13, 12, 11, 10, 9.6 | [wodby/postgres]                   | ✓             |                    |
 | [Redis]         | 6, 5                    | [wodby/redis]                      | ✓             |                    |
 | [Memcached]     | 1                       | [wodby/memcached]                  |               |                    |
 | [Varnish]       | 6.0, 4.1                | [wodby/varnish]                    |               |                    |
@@ -86,7 +85,6 @@ This project is licensed under the MIT open source license.
 [Node.js]: https://wodby.com/docs/stacks/wordpress/containers#nodejs
 [OpenSMTPD]: https://wodby.com/docs/stacks/wordpress/containers#opensmtpd
 [PHP]: https://wodby.com/docs/stacks/wordpress/containers#php
-[PostgreSQL]: https://wodby.com/docs/stacks/wordpress/containers#postgresql
 [Redis]: https://wodby.com/docs/stacks/wordpress/containers#redis
 [Rsyslog]: https://wodby.com/docs/stacks/wordpress/containers#rsyslog
 [Solr]: https://wodby.com/docs/stacks/solr
@@ -109,7 +107,6 @@ This project is licensed under the MIT open source license.
 [wodby/nginx]: https://github.com/wodby/nginx
 [wodby/node]: https://github.com/wodby/node
 [wodby/opensmtpd]: https://github.com/wodby/opensmtpd
-[wodby/postgres]: https://github.com/wodby/postgres
 [wodby/redis]: https://github.com/wodby/redis
 [wodby/rsyslog]: https://github.com/wodby/rsyslog
 [wodby/solr]: https://github.com/wodby/solr
