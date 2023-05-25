@@ -16,7 +16,7 @@ The WordPress stack consist of the following containers:
 
 | Container       | Versions         | Image                              | ARM64 support | Enabled by default |
 |-----------------|------------------|------------------------------------|---------------|--------------------|
-| [Nginx]         | 1.23, 1.22, 1.21 | [wodby/nginx]                      | ✓             | ✓                  |
+| [Nginx]         | 1.25, 1.24, 1.23 | [wodby/nginx]                      | ✓             | ✓                  |
 | [Apache]        | 2.4              | [wodby/apache]                     | ✓             |                    |
 | [WordPress]     | 6                | [wodby/wordpress]                  | ✓             | ✓                  |
 | [PHP]           | 8.2, 8.1, 8.0    | [wodby/wordpress-php]              | ✓             |                    |
