@@ -45,6 +45,7 @@ services:
 
   crond:
     image: wodby/wordpress-php:$PHP_TAG
+    init: true
     container_name: "${PROJECT_NAME}_crond"
     environment:
       CRONTAB: "0 * * * * wp cron event run --due-now --path=/var/www/html"
@@ -117,6 +118,7 @@ services:
 #  adminer:
 #    container_name: "${PROJECT_NAME}_adminer"
 #    image: wodby/adminer:$ADMINER_TAG
+#    init: true
 #    environment:
 #      ADMINER_DEFAULT_DB_HOST: $DB_HOST
 #      ADMINER_DEFAULT_DB_NAME: $DB_NAME
