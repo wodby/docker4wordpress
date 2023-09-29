@@ -7,6 +7,7 @@
 Docker4WordPress is a set of docker images optimized for WordPress. Use docker-compose.yml file from this repository to spin up a local environment for WordPress on Linux, macOS and Windows. 
 
 * Read the docs on [**how to use**](https://wodby.com/docs/stacks/wordpress/local#usage)
+* Ask questions on [Discord](http://discord.wodby.com/)
 * Ask questions on [Slack](http://slack.wodby.com/)
 * Follow [@wodbycloud](https://twitter.com/wodbycloud) for future announcements
 
@@ -24,7 +25,7 @@ The WordPress stack consist of the following containers:
 | [MariaDB]       | 11, 10.11-10.4   | [wodby/mariadb]                    | ✓             | ✓                  |
 | [Redis]         | 7, 6, 5          | [wodby/redis]                      | ✓             |                    |
 | [Memcached]     | 1                | [wodby/memcached]                  |               |                    |
-| [Varnish]       | 6.0, 4.1         | [wodby/varnish]                    |               |                    |
+| [Varnish]       | 6.0              | [wodby/varnish]                    |               |                    |
 | [Node.js]       | 18, 16, 14       | [wodby/node]                       |               |                    |
 | [Solr]          | 8, 7, 6, 5       | [wodby/solr]                       |               |                    |
 | [Elasticsearch] | 7, 6             | [wodby/elasticsearch]              |               |                    |
