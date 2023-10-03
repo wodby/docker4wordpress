@@ -26,7 +26,7 @@ The WordPress stack consist of the following containers:
 | [Redis]         | 7, 6, 5          | [wodby/redis]                      | ✓             |                    |
 | [Memcached]     | 1                | [wodby/memcached]                  |               |                    |
 | [Varnish]       | 6.0              | [wodby/varnish]                    |               |                    |
-| [Node.js]       | 18, 16, 14       | [wodby/node]                       |               |                    |
+| [Node.js]       | 20, 18           | [wodby/node]                       |               |                    |
 | [Solr]          | 8, 7, 6, 5       | [wodby/solr]                       |               |                    |
 | [Elasticsearch] | 7, 6             | [wodby/elasticsearch]              |               |                    |
 | [Kibana]        | 7, 6             | [wodby/kibana]                     |               |                    |
