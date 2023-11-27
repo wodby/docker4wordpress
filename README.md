@@ -20,7 +20,7 @@ The WordPress stack consist of the following containers:
 | [Nginx]         | 1.25, 1.24                  | [wodby/nginx]                      | ✓             | ✓                  |
 | [Apache]        | 2.4                         | [wodby/apache]                     | ✓             |                    |
 | [WordPress]     | 6                           | [wodby/wordpress]                  | ✓             | ✓                  |
-| [PHP]           | 8.2, 8.1, 8.0               | [wodby/wordpress-php]              | ✓             |                    |
+| [PHP]           | 8.2, 8.1                    | [wodby/wordpress-php]              | ✓             |                    |
 | Crond           |                             | [wodby/wordpress-php]              | ✓             | ✓                  |
 | [MariaDB]       | 11, 10.11, 10.6, 10.5, 10.4 | [wodby/mariadb]                    | ✓             | ✓                  |
 | [Redis]         | 7, 6                        | [wodby/redis]                      | ✓             |                    |
