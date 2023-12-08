@@ -18,6 +18,5 @@ wp plugin install redis-cache --activate
 wp plugin install vcaching --activate
 
 echo -n "Checking WordPress homepage... "
-curl -s -H "host: ${WP_DOMAIN}" "nginx"
-#curl -s -H "host: ${WP_DOMAIN}" "nginx" | grep -q "WordPress 6"
+curl -s -H "host: ${WP_DOMAIN}" "nginx" | grep -q "WordPress 6"
 echo "OK"
