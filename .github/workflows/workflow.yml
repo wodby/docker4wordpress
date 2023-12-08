@@ -18,6 +18,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
+    - name: Setup upterm session
+      uses: lhotari/action-upterm@v1
     - name: test
       env:
         PHP_VER: ${{ matrix.php_ver }}
