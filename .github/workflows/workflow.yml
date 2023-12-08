@@ -14,10 +14,10 @@ jobs:
   test:
     strategy:
       matrix:
-        php_ver: [ '8.2','8.1' ]
+        php_ver: [ '8.3','8.2','8.1' ]
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4
     - name: test
       env:
         PHP_VER: ${{ matrix.php_ver }}
@@ -27,7 +27,7 @@ jobs:
     if: startsWith(github.ref, 'refs/tags/')
     needs: test
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4
     - name: prepare artifact
       run: cp docker.mk Makefile && tar -czf docker4wordpress.tar.gz docker-compose.yml docker-compose.override.yml Makefile .env traefik.yml
     - name: get tag name
