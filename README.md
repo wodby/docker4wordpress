@@ -33,7 +33,7 @@ The WordPress stack consist of the following containers:
 | [Kibana]        | 7                           | [wodby/kibana]                     |               |                    |
 | [AthenaPDF]     | 2.16.0                      | [arachnysdocker/athenapdf-service] |               |                    |
 | [Mailhog]       | latest                      | [mailhog/mailhog]                  |               | ✓                  |
-| [OpenSMTPD]     | 6.0                         | [wodby/opensmtpd]                  |               |                    |
+| [OpenSMTPD]     | 7                           | [wodby/opensmtpd]                  |               |                    |
 | [Rsyslog]       | latest                      | [wodby/rsyslog]                    |               |                    |
 | [Webgrind]      | 1                           | [wodby/webgrind]                   |               |                    |
 | [XHProf viewer] | latest                      | [wodby/xhprof]                     |               |                    |
