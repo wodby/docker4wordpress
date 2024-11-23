@@ -15,11 +15,12 @@ services:
       DB_USER: $DB_USER
       DB_PASSWORD: $DB_PASSWORD
       DEBUG: 1
-      WP_VERSION: 5
+      WP_VERSION: 6
       PHP_SENDMAIL_PATH: '/bin/true'
       BASE_URL: http://$PROJECT_BASE_URL
       PHP_FPM_USER: wodby
       PHP_FPM_GROUP: wodby
+      WODBY_APP_NAME: wordpress6
     volumes:
       - codebase:/var/www/html/
       - ./tests.sh:/usr/local/bin/tests.sh
