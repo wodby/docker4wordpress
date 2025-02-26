@@ -16,30 +16,30 @@ up a local environment for WordPress on Linux, macOS and Windows.
 
 The WordPress stack consist of the following containers:
 
-| Container       | Versions               | Image                   | ARM64 support | Enabled by default |
-|-----------------|------------------------|-------------------------|---------------|--------------------|
-| [Nginx]         | 1.27, 1.26             | [wodby/nginx]           | ✓             | ✓                  |
-| [Apache]        | 2.4                    | [wodby/apache]          | ✓             |                    |
-| [WordPress]     | 6                      | [wodby/wordpress]       | ✓             | ✓                  |
-| [PHP]           | 8.4, 8.3, 8.2, 8.1     | [wodby/wordpress-php]   | ✓             |                    |
-| Crond           |                        | [wodby/wordpress-php]   | ✓             | ✓                  |
-| [MariaDB]       | 11.4, 10.6, 10.5, 10.4 | [wodby/mariadb]         | ✓             | ✓                  |
-| [Valkey]        | 8, 7                   | [wodby/valkey]          | ✓             |                    |
-| [Memcached]     | 1                      | [wodby/memcached]       |               |                    |
-| [Varnish]       | 6.0                    | [wodby/varnish]         | ✓             |                    |
-| [Node.js]       | 22, 20, 18             | [wodby/node]            | ✓             |                    |
-| [Solr]          | 9                      | [wodby/solr]            | ✓             |                    |
-| [Elasticsearch] | 7                      | [wodby/elasticsearch]   |               |                    |
-| [Kibana]        | 7                      | [wodby/kibana]          |               |                    |
-| Gotenberg       | latest                 | [gotenberg/gotenberg]   | ✓             |                    |
-| Mailpit         | latest                 | [axllent/mailpit]       | ✓             | ✓                  |
-| [OpenSMTPD]     | 7                      | [wodby/opensmtpd]       | ✓             |                    |
-| [Rsyslog]       | latest                 | [wodby/rsyslog]         |               |                    |
-| [Webgrind]      | 1                      | [wodby/webgrind]        | ✓             |                    |
-| [XHProf viewer] | latest                 | [wodby/xhprof]          | ✓             |                    |
-| Adminer         | 4.6                    | [wodby/adminer]         | ✓             |                    |
-| phpMyAdmin      | latest                 | [phpmyadmin/phpmyadmin] |               |                    |
-| Traefik         | latest                 | [_/traefik]             | ✓             | ✓                  |
+| Container             | Versions               | Image                                    | ARM64 support | Enabled by default |
+|-----------------------|------------------------|------------------------------------------|---------------|--------------------|
+| [Nginx]               | 1.27, 1.26             | [wodby/nginx]                            | ✓             | ✓                  |
+| [Apache]              | 2.4                    | [wodby/apache]                           | ✓             |                    |
+| [WordPress]           | 6                      | [wodby/wordpress]                        | ✓             | ✓                  |
+| [PHP]                 | 8.4, 8.3, 8.2, 8.1     | [wodby/wordpress-php]                    | ✓             |                    |
+| Crond                 |                        | [wodby/wordpress-php]                    | ✓             | ✓                  |
+| [MariaDB]             | 11.4, 10.6, 10.5, 10.4 | [wodby/mariadb]                          | ✓             | ✓                  |
+| [Valkey]              | 8, 7                   | [wodby/valkey]                           | ✓             |                    |
+| [Memcached]           | 1                      | [wodby/memcached]                        | ✓             |                    |
+| [Varnish]             | 6.0                    | [wodby/varnish]                          | ✓             |                    |
+| [Node.js]             | 22, 20, 18             | [wodby/node]                             | ✓             |                    |
+| [Solr]                | 9                      | [wodby/solr]                             | ✓             |                    |
+| OpenSearch            | 2                      | [opensearchproject/opensearch]           | ✓             |                    |
+| OpenSearch Dashboards | 2                      | [opensearchproject/opensearch-dashboard] | ✓             |                    |
+| Gotenberg             | latest                 | [gotenberg/gotenberg]                    | ✓             |                    |
+| Mailpit               | latest                 | [axllent/mailpit]                        | ✓             | ✓                  |
+| [OpenSMTPD]           | 7                      | [wodby/opensmtpd]                        | ✓             |                    |
+| [Rsyslog]             | latest                 | [wodby/rsyslog]                          | ✓             |                    |
+| [Webgrind]            | 1                      | [wodby/webgrind]                         | ✓             |                    |
+| [XHProf viewer]       | latest                 | [wodby/xhprof]                           | ✓             |                    |
+| Adminer               | 4.6                    | [wodby/adminer]                          | ✓             |                    |
+| phpMyAdmin            | latest                 | [phpmyadmin/phpmyadmin]                  |               |                    |
+| Traefik               | latest                 | [_/traefik]                              | ✓             | ✓                  |
 
 ## Documentation
 
@@ -87,10 +87,6 @@ This project is licensed under the MIT open source license.
 
 [Apache]: https://wodby.com/docs/stacks/wordpress/containers#apache
 
-[Elasticsearch]: https://wodby.com/docs/stacks/elasticsearch
-
-[Kibana]: https://wodby.com/docs/stacks/elasticsearch
-
 [MariaDB]: https://wodby.com/docs/stacks/wordpress/containers#mariadb
 
 [Memcached]: https://wodby.com/docs/stacks/wordpress/containers#memcached
@@ -129,10 +125,6 @@ This project is licensed under the MIT open source license.
 
 [wodby/apache]: https://github.com/wodby/apache
 
-[wodby/elasticsearch]: https://github.com/wodby/elasticsearch
-
-[wodby/kibana]: https://github.com/wodby/kibana
-
 [wodby/mariadb]: https://github.com/wodby/mariadb
 
 [wodby/memcached]: https://github.com/wodby/memcached
@@ -158,3 +150,7 @@ This project is licensed under the MIT open source license.
 [wodby/wordpress]: https://github.com/wodby/wordpress
 
 [wodby/xhprof]: https://github.com/wodby/xhprof
+
+[opensearchproject/opensearch]: https://hub.docker.com/r/opensearchproject/opensearch
+
+[opensearchproject/opensearch]: https://hub.docker.com/r/opensearchproject/opensearch-dashboards
