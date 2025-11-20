@@ -24,7 +24,8 @@ The WordPress stack consist of the following containers:
 | [PHP]                 | 8.4, 8.3, 8.2, 8.1     | [wodby/wordpress-php]                     | ✓             |                    |
 | Crond                 |                        | [wodby/wordpress-php]                     | ✓             | ✓                  |
 | [MariaDB]             | 11.4, 10.6, 10.5, 10.4 | [wodby/mariadb]                           | ✓             | ✓                  |
-| [Valkey]              | 8.1, 8.0, 7            | [wodby/valkey]                            | ✓             |                    |
+| [Valkey]              | 9.0, 8.1, 8.0, 7       | [wodby/valkey]                            | ✓             |                    |
+| [Redis]               | 8.2, 8.0, 7.4          | [wodby/redis]                             | ✓             |                    |
 | [Memcached]           | 1                      | [wodby/memcached]                         | ✓             |                    |
 | [Varnish]             | 6.0                    | [wodby/varnish]                           | ✓             |                    |
 | [Node.js]             | 24, 22, 20             | [wodby/node]                              | ✓             |                    |
@@ -107,6 +108,8 @@ This project is licensed under the MIT open source license.
 
 [Valkey]: https://wodby.com/docs/stacks/wordpress/containers#valkey
 
+[Redis]: https://wodby.com/docs/stacks/wordpress/containers#redis
+
 [Webgrind]: https://wodby.com/docs/stacks/wordpress/containers#webgrind
 
 [Wordpress]: https://wodby.com/docs/stacks/wordpress/containers#php
@@ -136,6 +139,8 @@ This project is licensed under the MIT open source license.
 [wodby/opensmtpd]: https://github.com/wodby/opensmtpd
 
 [wodby/valkey]: https://github.com/wodby/valkey
+
+[wodby/redis]: https://github.com/wodby/redis
 
 [wodby/rsyslog]: https://github.com/wodby/rsyslog
 
