@@ -40,7 +40,7 @@ The WordPress stack consist of the following containers:
 | [XHProf viewer]       | latest                 | [wodby/xhprof]                            | ✓             |                    |
 | Adminer               | 5                      | [wodby/adminer]                           | ✓             |                    |
 | phpMyAdmin            | latest                 | [phpmyadmin/phpmyadmin]                   |               |                    |
-| Traefik               | latest                 | [_/traefik]                               | ✓             | ✓                  |
+| Traefik               | 3                      | [_/traefik]                               | ✓             | ✓                  |
 
 ## Documentation
 
