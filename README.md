@@ -14,7 +14,7 @@ up a local environment for WordPress on Linux, macOS and Windows.
 
 ## Stack
 
-The WordPress stack consist of the following containers:
+The WordPress stack consists of the following containers:
 
 | Container             | Versions                | Image                                     | ARM64 support | Enabled by default |
 |-----------------------|-------------------------|-------------------------------------------|---------------|--------------------|
