@@ -16,31 +16,31 @@ up a local environment for WordPress on Linux, macOS and Windows.
 
 The WordPress stack consist of the following containers:
 
-| Container             | Versions               | Image                                     | ARM64 support | Enabled by default |
-|-----------------------|------------------------|-------------------------------------------|---------------|--------------------|
-| [Nginx]               | 1.29, 1.28             | [wodby/nginx]                             | ✓             | ✓                  |
-| [Apache]              | 2.4                    | [wodby/apache]                            | ✓             |                    |
-| [WordPress]           | 6                      | [wodby/wordpress]                         | ✓             | ✓                  |
-| [PHP]                 | 8.4, 8.3, 8.2, 8.1     | [wodby/wordpress-php]                     | ✓             |                    |
-| Crond                 |                        | [wodby/wordpress-php]                     | ✓             | ✓                  |
-| [MariaDB]             | 11.4, 10.6, 10.5, 10.4 | [wodby/mariadb]                           | ✓             | ✓                  |
-| [Valkey]              | 9.0, 8.1, 8.0, 7       | [wodby/valkey]                            | ✓             |                    |
-| [Redis]               | 8.2, 8.0, 7.4          | [wodby/redis]                             | ✓             |                    |
-| [Memcached]           | 1                      | [wodby/memcached]                         | ✓             |                    |
-| [Varnish]             | 6.0                    | [wodby/varnish]                           | ✓             |                    |
-| [Node.js]             | 24, 22, 20             | [wodby/node]                              | ✓             |                    |
-| [Solr]                | 9                      | [wodby/solr]                              | ✓             |                    |
-| OpenSearch            | 2                      | [opensearchproject/opensearch]            | ✓             |                    |
-| OpenSearch Dashboards | 2                      | [opensearchproject/opensearch-dashboards] | ✓             |                    |
-| Gotenberg             | latest                 | [gotenberg/gotenberg]                     | ✓             |                    |
-| Mailpit               | latest                 | [axllent/mailpit]                         | ✓             | ✓                  |
-| [OpenSMTPD]           | 7                      | [wodby/opensmtpd]                         | ✓             |                    |
-| [Rsyslog]             | latest                 | [wodby/rsyslog]                           | ✓             |                    |
-| [Webgrind]            | 1                      | [wodby/webgrind]                          | ✓             |                    |
-| [XHProf viewer]       | latest                 | [wodby/xhprof]                            | ✓             |                    |
-| Adminer               | 5                      | [wodby/adminer]                           | ✓             |                    |
-| phpMyAdmin            | latest                 | [phpmyadmin/phpmyadmin]                   |               |                    |
-| Traefik               | 3                      | [_/traefik]                               | ✓             | ✓                  |
+| Container             | Versions                | Image                                     | ARM64 support | Enabled by default |
+|-----------------------|-------------------------|-------------------------------------------|---------------|--------------------|
+| [Nginx]               | 1.29, 1.28              | [wodby/nginx]                             | ✓             | ✓                  |
+| [Apache]              | 2.4                     | [wodby/apache]                            | ✓             |                    |
+| [WordPress]           | 6                       | [wodby/wordpress]                         | ✓             | ✓                  |
+| [PHP]                 | 8.5, 8.4, 8.3, 8.2, 8.1 | [wodby/wordpress-php]                     | ✓             |                    |
+| Crond                 |                         | [wodby/wordpress-php]                     | ✓             | ✓                  |
+| [MariaDB]             | 11.4, 10.6, 10.5, 10.4  | [wodby/mariadb]                           | ✓             | ✓                  |
+| [Valkey]              | 9.0, 8.1, 8.0, 7        | [wodby/valkey]                            | ✓             |                    |
+| [Redis]               | 8.2, 8.0, 7.4           | [wodby/redis]                             | ✓             |                    |
+| [Memcached]           | 1                       | [wodby/memcached]                         | ✓             |                    |
+| [Varnish]             | 6.0                     | [wodby/varnish]                           | ✓             |                    |
+| [Node.js]             | 24, 22, 20              | [wodby/node]                              | ✓             |                    |
+| [Solr]                | 9                       | [wodby/solr]                              | ✓             |                    |
+| OpenSearch            | 2                       | [opensearchproject/opensearch]            | ✓             |                    |
+| OpenSearch Dashboards | 2                       | [opensearchproject/opensearch-dashboards] | ✓             |                    |
+| Gotenberg             | latest                  | [gotenberg/gotenberg]                     | ✓             |                    |
+| Mailpit               | latest                  | [axllent/mailpit]                         | ✓             | ✓                  |
+| [OpenSMTPD]           | 7                       | [wodby/opensmtpd]                         | ✓             |                    |
+| [Rsyslog]             | latest                  | [wodby/rsyslog]                           | ✓             |                    |
+| [Webgrind]            | 1                       | [wodby/webgrind]                          | ✓             |                    |
+| [XHProf viewer]       | latest                  | [wodby/xhprof]                            | ✓             |                    |
+| Adminer               | 5                       | [wodby/adminer]                           | ✓             |                    |
+| phpMyAdmin            | latest                  | [phpmyadmin/phpmyadmin]                   |               |                    |
+| Traefik               | 3                       | [_/traefik]                               | ✓             | ✓                  |
 
 ## Documentation
 
