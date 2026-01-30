@@ -25,7 +25,7 @@ The WordPress stack consists of the following containers:
 | Crond                 |                         | [wodby/wordpress-php]                     | ✓             | ✓                  |
 | [MariaDB]             | 11.4, 10.6, 10.5, 10.4  | [wodby/mariadb]                           | ✓             | ✓                  |
 | [Valkey]              | 9.0, 8.1, 8.0, 7        | [wodby/valkey]                            | ✓             |                    |
-| [Redis]               | 8.2, 8.0, 7.4           | [wodby/redis]                             | ✓             |                    |
+| [Redis]               | 8.4, 8.2, 8.0, 7.4      | [wodby/redis]                             | ✓             |                    |
 | [Memcached]           | 1                       | [wodby/memcached]                         | ✓             |                    |
 | [Varnish]             | 6.0                     | [wodby/varnish]                           | ✓             |                    |
 | [Node.js]             | 24, 22, 20              | [wodby/node]                              | ✓             |                    |
