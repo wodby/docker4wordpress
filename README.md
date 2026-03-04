@@ -146,8 +146,6 @@ This project is licensed under the MIT open source license.
 
 [wodby/solr]: https://github.com/wodby/solr
 
-[wodby/varnish]: https://github.com/wodby/varnish
-
 [wodby/vinyl]: https://github.com/wodby/vinyl
 
 [wodby/webgrind]: https://hub.docker.com/r/wodby/webgrind
