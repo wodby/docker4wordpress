@@ -27,7 +27,7 @@ The WordPress stack consists of the following containers:
 | [Valkey]              | 9.0, 8.1, 8.0, 7       | [wodby/valkey]                            | ✓             |                    |
 | [Redis]               | 8.4, 8.2, 8.0, 7.4     | [wodby/redis]                             | ✓             |                    |
 | [Memcached]           | 1                      | [wodby/memcached]                         | ✓             |                    |
-| Vinyl ([Varnish])     | 6.0                    | [wodby/vinyl]                             | ✓             |                    |
+| Vinyl ([Varnish])     | 8.0, 6.0               | [wodby/vinyl]                             | ✓             |                    |
 | [Node.js]             | 24, 22, 20             | [wodby/node]                              | ✓             |                    |
 | [Solr]                | 9                      | [wodby/solr]                              | ✓             |                    |
 | OpenSearch            | 2                      | [opensearchproject/opensearch]            | ✓             |                    |
