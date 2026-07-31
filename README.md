@@ -29,7 +29,7 @@ The WordPress stack consists of the following containers:
 | [Memcached]           | 1                      | [wodby/memcached]                         | ✓             |                    |
 | Vinyl ([Varnish])     | 8.0, 6.0               | [wodby/vinyl]                             | ✓             |                    |
 | [Node.js]             | 26, 24, 22             | [wodby/node]                              | ✓             |                    |
-| [Solr]                | 9                      | [wodby/solr]                              | ✓             |                    |
+| [Solr]                | 10, 9                  | [wodby/solr]                              | ✓             |                    |
 | OpenSearch            | 2                      | [opensearchproject/opensearch]            | ✓             |                    |
 | OpenSearch Dashboards | 2                      | [opensearchproject/opensearch-dashboards] | ✓             |                    |
 | Gotenberg             | latest                 | [gotenberg/gotenberg]                     | ✓             |                    |
