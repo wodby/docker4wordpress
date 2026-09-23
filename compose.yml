@@ -31,7 +31,7 @@ services:
       DB_NAME: $DB_NAME
       PHP_FPM_USER: wodby
       PHP_FPM_GROUP: wodby
-#      # Read instructions at https://wodby.com/docs/stacks/wordpress/local#xdebug
+#      # Read instructions at https://wodby.com/docs/1.0/stacks/wordpress/local#xdebug
 #      PHP_XDEBUG_MODE: debug
 #      PHP_XDEBUG_MODE: profile
 #      PHP_XDEBUG_USE_COMPRESSION: false
@@ -40,7 +40,7 @@ services:
 #      PHP_XDEBUG_LOG: /tmp/php-xdebug.log
     volumes:
     - ./:/var/www/html:cached
-## Alternative for macOS users: Mutagen https://wodby.com/docs/stacks/wordpress/local#docker-for-mac
+## Alternative for macOS users: Mutagen https://wodby.com/docs/1.0/stacks/wordpress/local#docker-for-mac
 #    - wordpress:/var/www/html
 #    # For XHProf and Xdebug profiler traces
 #    - files:/mnt/files
@@ -54,7 +54,7 @@ services:
     command: sudo crond -f -d 0
     volumes:
     - ./:/var/www/html:cached
-## Alternative for macOS users: Mutagen https://wodby.com/docs/stacks/wordpress/local#docker-for-mac
+## Alternative for macOS users: Mutagen https://wodby.com/docs/1.0/stacks/wordpress/local#docker-for-mac
 #    - wordpress:/var/www/html
 
   nginx:
@@ -70,7 +70,7 @@ services:
       #NGINX_SERVER_ROOT: /var/www/html/subdir
     volumes:
     - ./:/var/www/html:cached
-## Alternative for macOS users: Mutagen https://wodby.com/docs/stacks/wordpress/local#docker-for-mac
+## Alternative for macOS users: Mutagen https://wodby.com/docs/1.0/stacks/wordpress/local#docker-for-mac
 #    - wordpress:/var/www/html
     labels:
     - "traefik.http.routers.${PROJECT_NAME}_nginx.rule=Host(`${PROJECT_BASE_URL}`)"
@@ -93,7 +93,7 @@ services:
 #      APACHE_VHOST_PRESET: php
 #    volumes:
 #    - ./:/var/www/html:cached
-## Alternative for macOS users: Mutagen https://wodby.com/docs/stacks/wordpress/local#docker-for-mac
+## Alternative for macOS users: Mutagen https://wodby.com/docs/1.0/stacks/wordpress/local#docker-for-mac
 #    - wordpress:/var/www/html
 #    labels:
 #    - "traefik.http.routers.${PROJECT_NAME}_apache.rule=Host(`${PROJECT_BASE_URL}`)"

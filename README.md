@@ -7,7 +7,7 @@
 Docker4WordPress is a set of docker images optimized for WordPress. Use `compose.yml` file from this repository to spin
 up a local environment for WordPress on Linux, macOS and Windows.
 
-* Read the docs on [**how to use**](https://wodby.com/docs/stacks/wordpress/local#usage)
+* Read the docs on [**how to use**](https://wodby.com/docs/1.0/stacks/wordpress/local#usage)
 * Ask questions on [Discord](http://discord.wodby.com/)
 * Ask questions on [Slack](http://slack.wodby.com/)
 * Follow [@wodbycloud](https://twitter.com/wodbycloud) for future announcements
@@ -16,35 +16,35 @@ up a local environment for WordPress on Linux, macOS and Windows.
 
 The WordPress stack consists of the following containers:
 
-| Container             | Versions               | Image                                     | ARM64 support | Enabled by default |
-|-----------------------|------------------------|-------------------------------------------|---------------|--------------------|
-| [Nginx]               | 1.31, 1.30             | [wodby/nginx]                             | ✓             | ✓                  |
-| [Apache]              | 2.4                    | [wodby/apache]                            | ✓             |                    |
-| [WordPress]           | 7                      | [wodby/wordpress]                         | ✓             | ✓                  |
-| [PHP]                 | 8.5, 8.4, 8.3, 8.2     | [wodby/wordpress-php]                     | ✓             |                    |
-| Crond                 |                        | [wodby/wordpress-php]                     | ✓             | ✓                  |
-| [MariaDB]             | 11.4, 10.6, 10.5, 10.4 | [wodby/mariadb]                           | ✓             | ✓                  |
-| [Valkey]              | 9.0, 8.1, 8.0, 7       | [wodby/valkey]                            | ✓             |                    |
-| [Redis]               | 8.6, 8.4, 8.2, 7.4     | [wodby/redis]                             | ✓             |                    |
-| [Memcached]           | 1                      | [wodby/memcached]                         | ✓             |                    |
-| Vinyl ([Varnish])     | 8.0, 6.0               | [wodby/vinyl]                             | ✓             |                    |
-| [Node.js]             | 26, 24, 22             | [wodby/node]                              | ✓             |                    |
-| [Solr]                | 10, 9                  | [wodby/solr]                              | ✓             |                    |
-| OpenSearch            | 2                      | [opensearchproject/opensearch]            | ✓             |                    |
-| OpenSearch Dashboards | 2                      | [opensearchproject/opensearch-dashboards] | ✓             |                    |
-| Gotenberg             | latest                 | [gotenberg/gotenberg]                     | ✓             |                    |
-| Mailpit               | latest                 | [axllent/mailpit]                         | ✓             | ✓                  |
-| [OpenSMTPD]           | 7                      | [wodby/opensmtpd]                         | ✓             |                    |
-| [Rsyslog]             | latest                 | [wodby/rsyslog]                           | ✓             |                    |
-| [Webgrind]            | 1                      | [wodby/webgrind]                          | ✓             |                    |
-| [XHProf viewer]       | latest                 | [wodby/xhprof]                            | ✓             |                    |
-| Adminer               | 6                      | [wodby/adminer]                           | ✓             |                    |
-| phpMyAdmin            | latest                 | [phpmyadmin/phpmyadmin]                   |               |                    |
-| Traefik               | 3                      | [_/traefik]                               | ✓             | ✓                  |
+| Container             | Versions               | Image                                     | Enabled by default |
+|-----------------------|------------------------|-------------------------------------------|--------------------|
+| [Nginx]               | 1.31, 1.30             | [wodby/nginx]                             | ✓                  |
+| [Apache]              | 2.4                    | [wodby/apache]                            |                    |
+| [WordPress]           | 7                      | [wodby/wordpress]                         | ✓                  |
+| [PHP]                 | 8.5, 8.4, 8.3, 8.2     | [wodby/wordpress-php]                     |                    |
+| Crond                 |                        | [wodby/wordpress-php]                     | ✓                  |
+| [MariaDB]             | 11.4, 10.6, 10.5, 10.4 | [wodby/mariadb]                           | ✓                  |
+| [Valkey]              | 9.0, 8.1, 8.0, 7       | [wodby/valkey]                            |                    |
+| [Redis]               | 8.6, 8.4, 8.2, 7.4     | [wodby/redis]                             |                    |
+| [Memcached]           | 1                      | [wodby/memcached]                         |                    |
+| Vinyl ([Varnish])     | 8.0, 6.0               | [wodby/vinyl]                             |                    |
+| [Node.js]             | 26, 24, 22             | [wodby/node]                              |                    |
+| [Solr]                | 10, 9                  | [wodby/solr]                              |                    |
+| OpenSearch            | 2                      | [opensearchproject/opensearch]            |                    |
+| OpenSearch Dashboards | 2                      | [opensearchproject/opensearch-dashboards] |                    |
+| Gotenberg             | latest                 | [gotenberg/gotenberg]                     |                    |
+| Mailpit               | latest                 | [axllent/mailpit]                         | ✓                  |
+| [OpenSMTPD]           | 7                      | [wodby/opensmtpd]                         |                    |
+| [Rsyslog]             | latest                 | [wodby/rsyslog]                           |                    |
+| [Webgrind]            | 1                      | [wodby/webgrind]                          |                    |
+| [XHProf viewer]       | latest                 | [wodby/xhprof]                            |                    |
+| Adminer               | 6                      | [wodby/adminer]                           |                    |
+| phpMyAdmin            | latest                 | [phpmyadmin/phpmyadmin]                   |                    |
+| Traefik               | 3                      | [_/traefik]                               | ✓                  |
 
 ## Documentation
 
-Full documentation is available at https://wodby.com/docs/stacks/wordpress/local.
+Full documentation is available at https://wodby.com/docs/1.0/stacks/wordpress/local.
 
 ## Image tags
 
@@ -64,9 +64,6 @@ Use the versioned image tags supplied in `.env` instead of floating tags such as
 uses semantic product versions, and third-party images follow their own tag formats.
 See the [image revision policy](https://github.com/wodby/images#image-revisions)
 for details.
-
-Test fixtures use `*_IMAGE_REVISION` environment variables for the image release
-suffix.
 
 ## Maintenance
 
@@ -92,35 +89,35 @@ out [![WordPress stack on Wodby](https://www.google.com/s2/favicons?domain=wodby
 
 This project is licensed under the MIT open source license.
 
-[Apache]: https://wodby.com/docs/stacks/wordpress/containers#apache
+[Apache]: https://wodby.com/docs/1.0/stacks/wordpress/containers#apache
 
-[MariaDB]: https://wodby.com/docs/stacks/wordpress/containers#mariadb
+[MariaDB]: https://wodby.com/docs/1.0/stacks/wordpress/containers#mariadb
 
-[Memcached]: https://wodby.com/docs/stacks/wordpress/containers#memcached
+[Memcached]: https://wodby.com/docs/1.0/stacks/wordpress/containers#memcached
 
-[Nginx]: https://wodby.com/docs/stacks/wordpress/containers#nginx
+[Nginx]: https://wodby.com/docs/1.0/stacks/wordpress/containers#nginx
 
-[Node.js]: https://wodby.com/docs/stacks/wordpress/containers#nodejs
+[Node.js]: https://wodby.com/docs/1.0/stacks/wordpress/containers#nodejs
 
-[OpenSMTPD]: https://wodby.com/docs/stacks/wordpress/containers#opensmtpd
+[OpenSMTPD]: https://wodby.com/docs/1.0/stacks/wordpress/containers#opensmtpd
 
-[PHP]: https://wodby.com/docs/stacks/wordpress/containers#php
+[PHP]: https://wodby.com/docs/1.0/stacks/wordpress/containers#php
 
-[Rsyslog]: https://wodby.com/docs/stacks/wordpress/containers#rsyslog
+[Rsyslog]: https://wodby.com/docs/1.0/stacks/wordpress/containers#rsyslog
 
-[Solr]: https://wodby.com/docs/stacks/solr
+[Solr]: https://wodby.com/docs/1.0/stacks/solr
 
-[Varnish]: https://wodby.com/docs/stacks/wordpress/containers#varnish
+[Varnish]: https://wodby.com/docs/1.0/stacks/wordpress/containers#varnish
 
-[Valkey]: https://wodby.com/docs/stacks/wordpress/containers#valkey
+[Valkey]: https://wodby.com/docs/1.0/stacks/wordpress/containers#valkey
 
-[Redis]: https://wodby.com/docs/stacks/wordpress/containers#redis
+[Redis]: https://wodby.com/docs/1.0/stacks/wordpress/containers#redis
 
-[Webgrind]: https://wodby.com/docs/stacks/wordpress/containers#webgrind
+[Webgrind]: https://wodby.com/docs/1.0/stacks/wordpress/containers#webgrind
 
-[Wordpress]: https://wodby.com/docs/stacks/wordpress/containers#php
+[Wordpress]: https://wodby.com/docs/1.0/stacks/wordpress/containers#php
 
-[XHProf viewer]: https://wodby.com/docs/stacks/php/containers#xhprof-viewer
+[XHProf viewer]: https://wodby.com/docs/1.0/stacks/php/containers#xhprof-viewer
 
 [_/traefik]: https://hub.docker.com/_/traefik
 
