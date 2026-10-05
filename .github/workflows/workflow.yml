@@ -22,10 +22,16 @@ jobs:
         env:
           PHP_VER: ${{ matrix.php_ver }}
         run: make test
+  test-mariadb-12-3:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - name: Test MariaDB 12.3 LTS
+        run: make test MARIADB_TAG=12.3-r4
   release:
     runs-on: ubuntu-latest
     if: startsWith(github.ref, 'refs/tags/')
-    needs: test
+    needs: [test, test-mariadb-12-3]
     steps:
       - uses: actions/checkout@v6
       - name: prepare artifact
