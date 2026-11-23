@@ -8,6 +8,7 @@ Docker4WordPress is a set of docker images optimized for WordPress. Use `compose
 up a local environment for WordPress on Linux, macOS and Windows.
 
 * Read the docs on [**how to use**](https://wodby.com/docs/1.0/stacks/wordpress/local#usage)
+* Deploy to production with the [WordPress stack on Wodby](https://wodby.com/deploy-wordpress)
 * Ask questions on [Discord](http://discord.wodby.com/)
 * Ask questions on [Slack](http://slack.wodby.com/)
 * Follow [@wodbycloud](https://twitter.com/wodbycloud) for future announcements
@@ -72,11 +73,23 @@ see [releases page](https://github.com/wodby/docker4wordpress/releases) for full
 of routine updates for images and this project performed by [the bot](https://github.com/wodbot) via scripts located
 at [wodby/images](https://github.com/wodby/images).
 
-## Beyond local environment
+## Deploy to production
 
-Docker4WordPress is a project designed to help you spin up local environment with Docker Compose. If you want to deploy
-a consistent stack with orchestrations to your own server, check
-out [![WordPress stack on Wodby](https://www.google.com/s2/favicons?domain=wodby.com) Wodby](https://wodby.com/stacks/wordpress).
+Docker4WordPress is for local development with Docker Compose. To run the same stack in production, use
+the [WordPress stack on Wodby](https://wodby.com/deploy-wordpress).
+
+It runs your Composer-based WordPress repository on Kubernetes with the same `wodby/wordpress-php` image you use
+locally, behind Nginx, with MariaDB, Valkey, and Vinyl (Varnish) as optional services. You choose where it runs: Wodby
+Cloud, a Kubernetes cluster in your own cloud account, or a single server of your own.
+
+* Start from the Vanilla WordPress boilerplate, or connect your own repository
+* The WordPress configuration is generated from the environment, including the site address, keys, and salts
+* WordPress content is kept on shared persistent storage
+* CI/CD and backups are built in
+* A free plan is available, including on a server of your own
+
+Read the [WordPress stack guide](https://wodby.com/docs/2.0/stacks/catalog/wordpress/), or
+see [WordPress hosting on Wodby](https://wodby.com/wordpress-hosting) and [pricing](https://wodby.com/pricing).
 
 ## Other Docker4x projects
 
